@@ -5,8 +5,6 @@
 This Chrome Exthension adds links to download audio for serveral on-line dictionaries.
 
 ![](demo/oxford.jpg)
-![](demo/tw_yahoo.jpg)
-![](demo/save_as.jpg)
 
 **Please note that the copyright of the audio clips belong to their original owners.**
 

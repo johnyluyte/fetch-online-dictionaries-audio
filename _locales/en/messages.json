@@ -5,7 +5,7 @@
   },
   "extDescription": {
     "description": "Extension description.",
-    "message": "This Chrome Exthension adds links to download audio for serveral online dictionaries sites."
+    "message": "This Chrome Extension adds links to download audio for several online dictionaries sites."
   },
   "textDownloadAudio": {
     "description": "Description for Download button.",
