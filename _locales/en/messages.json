@@ -1,11 +1,11 @@
 {
   "extName": {
     "description": "Extension name.",
-    "message": "Download Online Dictionaries Audio"
+    "message": "Download Audio of Online Dictionaries"
   },
   "extDescription": {
     "description": "Extension description.",
-    "message": "This Chrome Exthension adds links to download audio for serveral on-line dictionaries."
+    "message": "This Chrome Exthension adds links to download audio for serveral online dictionaries sites."
   },
   "textDownloadAudio": {
     "description": "Description for Download button.",
@@ -13,15 +13,19 @@
   },
   "textSupportedSites": {
     "description": "Current support sites",
-    "message": "Current Support Sites"
+    "message": "Current Support Sites: "
   },
   "textIssues": {
     "description": "Suggestions and issues",
-    "message": "Please report your suggestions and issues to "
+    "message": "Please report suggestions and issues to "
   },
   "textSourceCode": {
     "description": "Source code",
     "message": "Source Code："
+  },
+  "textCopyRight": {
+    "description": "Copy Rights",
+    "message": "The copyright of the audio clips belong to their original owners."
   },
   "textSupportedSitesLists": {
     "description": "Description for Download button.",

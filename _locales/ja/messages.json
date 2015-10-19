@@ -1,26 +1,26 @@
 {
   "extName": {
     "description": "Extension name.",
-    "message": "下載網路字典發音"
+    "message": "オンライン辞書の音声をダウンロード"
   },
   "extDescription": {
     "description": "Extension description.",
-    "message": "可下載多個網路字典的發音。"
+    "message": "オンライン辞書の音声をダウンロード。"
   },
   "textDownloadAudio": {
     "description": "Description for download link.",
-    "message": "下載發音"
+    "message": "音声をダウンロード"
   },
   "textSupportedSites": {
     "description": "Current support sites",
-    "message": "目前支援的網站："
+    "message": "この拡張機能は以下のサイトのみで使えます："
   },
   "textIssues": {
     "description": "Suggestions and issues",
-    "message": "有任何建議、需求或問題歡迎回報至："
+    "message": "ご意見、不具合などは Github でお願いします："
   },
   "textSourceCode": {
     "description": "Source code",
-    "message": "程式原始碼在："
+    "message": "ソースコードはここ："
   }
 }

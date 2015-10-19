@@ -1,4 +1,4 @@
-# Fetch Audio of Online-Dictionaries
+# Fetch Audio of Online Dictionaries
 
 ## What is this
 
@@ -25,6 +25,11 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Add the site's name to `README.md`.
 - Commit.
 
+## Todo Sites
+
+- http://ejje.weblio.jp/content/%E5%BF%83
+- http://jisho.org/search/%E3%81%93%E3%81%93%E3%82%8D
+- http://nihongo.monash.edu/cgi-bin/wwwjdic?1E
 
 ## License
 

@@ -3,34 +3,24 @@
   "author": "Chien Chun",
   "name": "__MSG_extName__",
   "version": "0.0.1",
-  "description": "__MSG_extDescription__",
   "default_locale": "en",
-
+  "description": "__MSG_extDescription__",
   "icons": {
     "48": "icons/icon_48.png" ,
     "128": "icons/icon_128.png"
   },
-
   "permissions": [
     "activeTab"
   ],
-
   "content_scripts": [
     {
       "js": ["jquery-1.11.3.min.js", "content_scripts.js"],
       "matches": [ "http://*/*", "https://*/*" ]
     }
   ],
-
   "options_ui": {
     "page": "options.html",
-    // "open_in_tab": true,
     "chrome_style": true
   },
-
   "web_accessible_resources": ["icons/icon_24.png"]
-
 }
-
-
-
