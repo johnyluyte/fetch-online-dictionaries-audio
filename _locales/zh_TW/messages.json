@@ -1,0 +1,26 @@
+{
+  "extName": {
+    "description": "Extension name.",
+    "message": "網路字典發音下載"
+  },
+  "extDescription": {
+    "description": "Extension description.",
+    "message": "可下載多個網路字典的發音。"
+  },
+  "textDownloadAudio": {
+    "description": "Description for download link.",
+    "message": "下載發音"
+  },
+  "textSupportedSites": {
+    "description": "Current support sites",
+    "message": "目前支援的網站："
+  },
+  "textIssues": {
+    "description": "Suggestions and issues",
+    "message": "有任何建議、需求或問題歡迎回報至 "
+  },
+  "textSourceCode": {
+    "description": "Source code",
+    "message": "程式原始碼："
+  }
+}

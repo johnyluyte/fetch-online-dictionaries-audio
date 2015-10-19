@@ -1,0 +1,34 @@
+{
+  "extName": {
+    "description": "Extension name.",
+    "message": "Download Online Dictionaries Audio"
+  },
+  "extDescription": {
+    "description": "Extension description.",
+    "message": "This Chrome Exthension adds links to download audio for serveral on-line dictionaries."
+  },
+  "textDownloadAudio": {
+    "description": "Description for Download button.",
+    "message": "Download Audio"
+  },
+  "textSupportedSites": {
+    "description": "Current support sites",
+    "message": "Current Support Sites"
+  },
+  "textIssues": {
+    "description": "Suggestions and issues",
+    "message": "Please report your suggestions and issues to "
+  },
+  "textSourceCode": {
+    "description": "Source code",
+    "message": "Source Code："
+  },
+  "textSupportedSitesLists": {
+    "description": "Description for Download button.",
+    "message": "
+        http://tw.dictionary.yahoo.com/,
+        http://www.oxfordlearnersdictionaries.com/
+    "
+  }
+
+}
