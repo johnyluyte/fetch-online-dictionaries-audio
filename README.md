@@ -4,7 +4,7 @@
 
 This Chrome Exthension adds links to download audio for serveral on-line dictionaries.
 
-![](demo/jisho.png)
+![](demo/jisho.jpg)
 
 **Please note that the copyright of the audio clips belong to their original owners.**
 
