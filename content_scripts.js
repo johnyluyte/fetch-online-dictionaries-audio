@@ -43,6 +43,18 @@ function isValid(url){
     });
   }
 
+  // http://jisho.org/
+  else if(url.match(/http:\/\/*jisho.org\/*/)){
+    if(!$("a.concept_audio").length){
+      return false;
+    }
+    $("a.concept_audio").each(function( index ) {
+      audio_url = $( this ).prev().children().first().attr("src");
+      console.log(audio_url);
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
   else{
     return false;
   }

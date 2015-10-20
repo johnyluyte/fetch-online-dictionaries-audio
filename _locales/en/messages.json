@@ -31,7 +31,8 @@
     "description": "Description for Download button.",
     "message": "
         http://tw.dictionary.yahoo.com/,
-        http://www.oxfordlearnersdictionaries.com/
+        http://www.oxfordlearnersdictionaries.com/,
+        http://jisho.org/
     "
   }
 

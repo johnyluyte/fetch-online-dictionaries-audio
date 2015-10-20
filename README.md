@@ -11,8 +11,9 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 
 ## Current Supported Sites
 
-- 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
-- Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
+- (English) 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
+- (English) Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
+- (Japanese) jisho Japanese-English dictionary [http://jisho.org/](http://jisho.org/)
 
 
 ## Add a New Site
@@ -23,11 +24,6 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Add the site's name to `README.md`.
 - Commit.
 
-## Todo Sites
-
-- http://ejje.weblio.jp/content/%E5%BF%83
-- http://jisho.org/search/%E3%81%93%E3%81%93%E3%82%8D
-- http://nihongo.monash.edu/cgi-bin/wwwjdic?1E
 
 ## License
 
