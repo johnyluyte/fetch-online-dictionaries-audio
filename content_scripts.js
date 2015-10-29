@@ -50,9 +50,17 @@ function isValid(url){
     }
     $("a.concept_audio").each(function( index ) {
       audio_url = $( this ).prev().children().first().attr("src");
-      console.log(audio_url);
       insert_download_link(audio_url, $(this));
     });
+  }
+
+  // https://www.moedict.tw/
+  else if(url.match(/http[s]?:\/\/*www.moedict.tw\/*/)){
+    if(!$(".icon-play.playAudio").length){
+      return false;
+    }
+    audio_url = $(".icon-play.playAudio").children().last().attr("content");
+    insert_download_link(audio_url, '.icon-play.playAudio');
   }
 
   else{

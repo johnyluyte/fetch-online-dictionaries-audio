@@ -14,6 +14,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
 - (English) Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
 - (Japanese) jisho Japanese-English dictionary [http://jisho.org/](http://jisho.org/)
+- (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
 
 
 ## Add a New Site
@@ -22,6 +23,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Add its audio distraction rules to `content_scripts.js`.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
+- Update version number in `manifest.json`.
 - Commit.
 
 
