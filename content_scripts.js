@@ -59,8 +59,12 @@ function isValid(url){
     if(!$(".icon-play.playAudio").length){
       return false;
     }
-    audio_url = $(".icon-play.playAudio").children().last().attr("content");
-    insert_download_link(audio_url, '.icon-play.playAudio');
+    $(".icon-play.playAudio").each(function( index ) {
+      audio_url = $( this ).children().filter(function(){
+        return $(this).attr("itemprop")=="contentURL";
+      }).attr("content");
+      insert_download_link(audio_url, $(this));
+    });
   }
 
   else{
