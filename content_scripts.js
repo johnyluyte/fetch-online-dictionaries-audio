@@ -67,6 +67,17 @@ function isValid(url){
     });
   }
 
+  // http://dictionary.cambridge.org/
+  else if(url.match(/http[s]?:\/\/*dictionary.cambridge.org\/*/)){
+    if(!$(".sound.audio_play_button").length){
+      return false;
+    }
+    $(".sound.audio_play_button").each(function( index ) {
+      audio_url = $( this ).attr("data-src-ogg");
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
   else{
     return false;
   }

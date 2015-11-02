@@ -15,6 +15,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
 - (Japanese) jisho Japanese-English dictionary [http://jisho.org/](http://jisho.org/)
 - (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
+- (English) Cambridge Dictionaries online [http://dictionary.cambridge.org/](http://dictionary.cambridge.org/)
 
 
 ## Add a New Site
