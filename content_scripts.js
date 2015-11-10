@@ -78,6 +78,21 @@ function isValid(url){
     });
   }
 
+  // http://www.godic.net/
+  else if(url.match(/http[s]?:\/\/*www.godic.net\/*/)){
+    if(!$("#dict-body .voice-js.voice-button").length){
+      return false;
+    }
+    $("#dict-body .voice-js.voice-button").each(function( index ){
+      // 排除掉中文發音
+      if(!$(this).attr("data-rel").match(/langid=de*/)){
+        return false;
+      }
+      audio_url = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
   else{
     return false;
   }

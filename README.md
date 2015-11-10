@@ -16,6 +16,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (Japanese) jisho Japanese-English dictionary [http://jisho.org/](http://jisho.org/)
 - (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
 - (English) Cambridge Dictionaries online [http://dictionary.cambridge.org/](http://dictionary.cambridge.org/)
+- (German/Deutsch) 德语助手 [http://www.godic.net/](http://www.godic.net/)
 
 
 ## Add a New Site
@@ -25,7 +26,9 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
 - Update version number in `manifest.json`.
-- Commit.
+- Commit & Push.
+- Update & publish to Google Chrome Store.
+- Add the site's name to `blog page`.
 
 
 ## License
