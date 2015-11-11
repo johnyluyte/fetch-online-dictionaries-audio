@@ -9,7 +9,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 **Please note that the copyright of the audio clips belong to their original owners.**
 
 
-## Current Supported Sites
+## Supported Online Dictionaries
 
 - (English) 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
 - (English) Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
@@ -17,11 +17,11 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
 - (English) Cambridge Dictionaries online [http://dictionary.cambridge.org/](http://dictionary.cambridge.org/)
 - (German/Deutsch) 德语助手 [http://www.godic.net/](http://www.godic.net/)
+- (Japanese) Japanesepod101 [http://www.japanesepod101.com/](http://www.japanesepod101.com/)
 
+## Add a New Online Dictionaries
 
-## Add a New Site
-
-- Find a new site which is not yet being supported.
+- Find a new Online Dictionaries which is not yet being supported.
 - Add its audio distraction rules to `content_scripts.js`.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.

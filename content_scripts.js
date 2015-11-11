@@ -7,14 +7,10 @@
 */
 
 $(function(){
-  isValid(document.URL);
+  mainJob(document.URL);
 });
 
-// window.onload = function(){
-//   isValidURL(document.URL);
-// }
-
-function isValid(url){
+function mainJob(url){
   /*
     1. [REGEX in javascript]
       We do not need double quote "" here, because the function match(reg) requires RGEEX in its argument, and string confounded by double forward slash /MY_REG/ is the RGEEX in javascript
@@ -93,6 +89,25 @@ function isValid(url){
     });
   }
 
+  // http://www.japanesepod101.com//
+  else if(url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)){
+    if(!$("#dictionary_results .Dictionary .Dictionary_Eng img").length){
+      return false;
+    }
+    $("#dictionary_results .Dictionary .Dictionary_Eng img").each(function( index ){
+      // tmp = PlaySound('http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?id=97886');
+      var tmp = $(this).attr("onclick");
+      audio_url = tmp.substring(11, tmp.length-3);
+      insert_download_link(audio_url, $(this));
+    });
+    $("#dictionary_results .Dictionary .Dictionary_Eng_Alt img").each(function( index ){
+      // Too lazy to tidy up duplicated codes
+      var tmp = $(this).attr("onclick");
+      audio_url = tmp.substring(11, tmp.length-3);
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
   else{
     return false;
   }
@@ -102,3 +117,20 @@ function insert_download_link(audio_url, insert_after){
   img_url = chrome.extension.getURL('icons/icon_24.png');
   $("<a target='_blank' href='" + audio_url + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + img_url + "' alt='Download Audio' height='16' width='16'></a>").insertAfter(insert_after);
 }
+
+
+/*
+  `content_script.js` and `background.js` use "Message Passing" to communicate with each other.
+  FYI, `background.js` controls `page action`.
+
+  Reference:
+    https://developer.chrome.com/extensions/pageAction
+    https://developer.chrome.com/extensions/messaging
+*/
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.greeting == "onClickedPageActionButton"){
+      mainJob(document.URL);
+      sendResponse({farewell: "goodbye"});
+    }
+});
