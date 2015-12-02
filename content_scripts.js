@@ -82,7 +82,24 @@ function mainJob(url){
     $("#dict-body .voice-js.voice-button").each(function( index ){
       // 排除掉中文發音
       if(!$(this).attr("data-rel").match(/langid=de*/)){
-        return false;
+        // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
+        return;
+      }
+      audio_url = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
+  // http://www.frdic.com/
+  else if(url.match(/http[s]?:\/\/*www.frdic.com\/*/)){
+    if(!$("#dict-body .voice-js.voice-button").length){
+      return false;
+    }
+    $("#dict-body .voice-js.voice-button").each(function( index ){
+      // 排除掉中文發音
+      if(!$(this).attr("data-rel").match(/langid=fr*/)){
+        // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
+        return;
       }
       audio_url = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
       insert_download_link(audio_url, $(this));
