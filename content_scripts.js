@@ -106,7 +106,7 @@ function mainJob(url){
     });
   }
 
-  // http://www.japanesepod101.com//
+  // http://www.japanesepod101.com/
   else if(url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)){
     if(!$("#dictionary_results .Dictionary .Dictionary_Eng img").length){
       return false;
@@ -121,6 +121,19 @@ function mainJob(url){
       // Too lazy to tidy up duplicated codes
       var tmp = $(this).attr("onclick");
       audio_url = tmp.substring(11, tmp.length-3);
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
+  // http://www.learnersdictionary.com/definition/dog
+  else if(url.match(/http[s]?:\/\/*www.learnersdictionary.com\/*/)){
+    if(!$(".fa.fa-volume-up.play_pron").length){
+      return false;
+    }
+    $(".fa.fa-volume-up.play_pron").each(function( index ) {
+      var dir = $( this ).attr("data-dir");
+      var file = $( this ).attr("data-file");
+      audio_url = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
       insert_download_link(audio_url, $(this));
     });
   }

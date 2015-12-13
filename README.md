@@ -19,6 +19,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (German/Deutsch) 德语助手 [http://www.godic.net/](http://www.godic.net/)
 - (Japanese) Japanesepod101 [http://www.japanesepod101.com/](http://www.japanesepod101.com/)
 - (France/French) 法语助手 [http://www.frdic.com/](http://www.frdic.com/)
+- (English) Learner's Dictionary [http://www.learnersdictionary.com/](http://www.learnersdictionary.com/)
 
 
 ## Add a New Online Dictionaries
