@@ -138,12 +138,70 @@ function mainJob(url){
     });
   }
 
+  // https://tw.voicetube.com/definition/prodigy?ref=def
+  else if(url.match(/http[s]?:\/\/*tw.voicetube.com\/definition\/*/)){
+    if(!$(".audioButton").length){
+      return false;
+    }
+    $(".audioButton").each(function( index ) {
+      audio_url = "https://tw.voicetube.com" + $( this ).attr("href");
+      insert_download_link(audio_url, $(this).parent().parent());
+    });
+  }
+
+  // http://www.merriam-webster.com/dictionary/cat
+  else if(url.match(/http[s]?:\/\/*www.merriam-webster.com\/dictionary\/*/)){
+    if(!$(".play-pron").length){
+      return false;
+    }
+    $(".play-pron").each(function( index ) {
+      var dir = $( this ).attr("data-dir");
+      var file = $( this ).attr("data-file");
+      audio_url = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
+      insert_download_link(audio_url, $(this));
+    });
+  }
+
+  // http://yun.dreye.com/dict_new/dict.php?w=dog&hidden_codepage=01
+  // http://yun.dreye.com/dict_new/dict.php?w=accordance
+  else if(url.match(/http[s]?:\/\/*yun.dreye.com\/dict_new\/*/)){
+    // 從網址取得查詢的單字
+    // Could use split(regex) here to make it less ugly
+    var tmp = url.split('=')[1];
+    var vocab = tmp.split('&')[0];
+    if(!vocab){
+      return false;
+    }
+    // 取得第一個字母，並將其轉成大寫，例如 'a' -> 'A'
+    var dir = vocab.charAt(0).toUpperCase();
+    // 真人發音(男)
+    if($("#real_pron_m").length){
+      $("#real_pron_m").each(function( index ) {
+        audio_url = "http://yun.dreye.com/dict_new/media/" + dir + "/" + vocab + ".mp3";
+        insert_download_link(audio_url, $(this));
+      });
+    }
+    // 真人發音(女)
+    if($("#real_pron_f").length){
+      $("#real_pron_f").each(function( index ) {
+        audio_url = "http://yun.dreye.com/dict_new/female_media/" + dir + "/" + vocab + ".mp3";
+        insert_download_link(audio_url, $(this));
+      });
+    }
+  }
+
+
+
+
+
   else{
+    console.log("no match");
     return false;
   }
 }
 
 function insert_download_link(audio_url, insert_after){
+  console.log("audio_url = " + audio_url);
   img_url = chrome.extension.getURL('icons/icon_24.png');
   $("<a target='_blank' href='" + audio_url + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + img_url + "' alt='Download Audio' height='16' width='16'></a>").insertAfter(insert_after);
 }

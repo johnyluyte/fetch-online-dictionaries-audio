@@ -20,16 +20,20 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (Japanese) Japanesepod101 [http://www.japanesepod101.com/](http://www.japanesepod101.com/)
 - (France/French) 法语助手 [http://www.frdic.com/](http://www.frdic.com/)
 - (English) Learner's Dictionary [http://www.learnersdictionary.com/](http://www.learnersdictionary.com/)
+- (English) Merriam-Webster [http://www.merriam-webster.com/](http://www.merriam-webster.com/)
+- (English) VoiceTube [https://tw.voicetube.com/](https://tw.voicetube.com/)
+- (English) Dr.eye 譯典通 [http://yun.dreye.com/dict_new](http://yun.dreye.com/dict_new)
 
+## Add a New Entry
 
-## Add a New Online Dictionaries
-
-- Find a new Online Dictionaries which is not yet being supported.
+- Find a new Online Dictionary which is not yet being supported.
 - Add its audio distraction rules to `content_scripts.js`.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
 - Update version number in `manifest.json`.
-- Commit & Push.
+- Update `notification page`. (will show when upgraded to a new version)
+  - Add version notes.
+- Commit & Push to github.
 - Update & publish to Google Chrome Store.
 - Add the site's name to `blog page`.
 
