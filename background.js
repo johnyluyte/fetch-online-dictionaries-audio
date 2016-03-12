@@ -25,3 +25,14 @@ chrome.pageAction.onClicked.addListener(function(tab){
       });
     });
 });
+
+
+/*
+  Fired when the extension is first installed, when the extension is updated to a new version, and when Chrome is updated to a new version.
+  Reference:
+    https://developer.chrome.com/extensions/runtime#event-onInstalled
+*/
+chrome.runtime.onInstalled.addListener(function(){
+  console.log("oninstall");
+  chrome.tabs.create({ url: "updates.html" });
+});
