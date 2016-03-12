@@ -13,11 +13,11 @@
   },
   "textSupportedSites": {
     "description": "Current support sites",
-    "message": "目前支援的網站："
+    "message": "支援的網站："
   },
   "textIssues": {
     "description": "Suggestions and issues",
-    "message": "有任何建議、需求或問題歡迎回報至："
+    "message": "有任何需求或問題請回報至："
   },
   "textSourceCode": {
     "description": "Source code",
