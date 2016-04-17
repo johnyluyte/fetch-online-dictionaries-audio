@@ -23,13 +23,17 @@
     "description": "Source code",
     "message": "Source Code："
   },
+  "textUserPrivacy": {
+    "description": "User Data Privacy",
+    "message": "This Chorme Extension does not collect any user data. You can check out the source codes at github above."
+  },
   "textCopyRight": {
     "description": "Copy Rights",
     "message": "The copyright of the audio clips belong to their original owners."
   },
   "textSupportedSitesLists": {
     "description": "Description for Download button.",
-    "message": "http://tw.dictionary.yahoo.com/,http://www.oxfordlearnersdictionaries.com/,http://jisho.org/,http://www.moedict.tw/,http://dictionary.cambridge.org/,http://www.godic.net/,http://www.japanesepod101.com/,http://www.frdic.com/,http://www.learnersdictionary.com/,http://www.merriam-webster.com/,https://tw.voicetube.com/,http://yun.dreye.com/dict_new/"
+    "message": "http://tw.dictionary.yahoo.com/,http://www.oxfordlearnersdictionaries.com/,http://jisho.org/,http://www.moedict.tw/,http://dictionary.cambridge.org/,http://www.godic.net/,http://www.japanesepod101.com/,http://www.frdic.com/,http://www.learnersdictionary.com/,http://www.merriam-webster.com/,https://tw.voicetube.com/,http://yun.dreye.com/dict_new/,https://www.vocabulary.com/"
   }
 
 }

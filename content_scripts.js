@@ -190,20 +190,28 @@ function mainJob(url){
     }
   }
 
-
-
+  // https://www.vocabulary.com/dictionary/dog
+  else if(url.match(/http[s]?:\/\/*www.vocabulary.com\/dictionary\/*/)){
+    if(!$("a.audio").length){
+      return false;
+    }
+    $("a.audio").each(function( index ) {
+      audio_url = "https://audio.vocab.com/1.0/us/" + $( this ).attr("data-audio") + ".mp3";
+      insert_download_link(audio_url, $(this));
+    });
+  }
 
 
   else{
-    console.log("no match");
+    // console.log("no match");
     return false;
   }
 }
 
 function insert_download_link(audio_url, insert_after){
-  console.log("audio_url = " + audio_url);
+  // console.log("audio_url = " + audio_url);
   img_url = chrome.extension.getURL('icons/icon_24.png');
-  $("<a target='_blank' href='" + audio_url + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + img_url + "' alt='Download Audio' height='16' width='16'></a>").insertAfter(insert_after);
+  $("<span style='font-size:14px'><a target='_blank' href='" + audio_url + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + img_url + "' alt='Download Audio' height='16' width='16'></a></font>").insertAfter(insert_after);
 }
 
 

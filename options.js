@@ -15,6 +15,10 @@ for(var i=0; i<len; i++){
 show += "</ul>";
 $("#div_site_lists").append(show);
 
+// User Data Privacy
+var userPrivacy = chrome.i18n.getMessage("textUserPrivacy") + "<br/>";
+$("#div_userPrivacy").append(userPrivacy);
+
 // Copyright
 var copyright = "<b>" + chrome.i18n.getMessage("textCopyRight") + "</b><br/>";
 $("#div_copyright").append(copyright);
