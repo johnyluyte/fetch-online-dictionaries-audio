@@ -193,6 +193,35 @@ function mainJob(url){
     });
   }
 
+  // http://www.thefreedictionary.com/dog
+  else if(url.match(/http[s]?:\/\/*www.thefreedictionary.com\/*/)){
+    // 美國
+    if($(".i.snd-icon-US").length > 0){
+      $(".i.snd-icon-US").each(function( index ) {
+        var tmp = $( this ).attr("onclick");
+        audio_url = tmp.substring(10, tmp.length-2);
+        insert_download_link(audio_url, $(this));
+      });
+    }
+    // 英國
+    if($(".i.snd-icon-UK").length > 0){
+      $(".i.snd-icon-UK").each(function( index ) {
+        var tmp = $( this ).attr("onclick");
+        audio_url = tmp.substring(10, tmp.length-2);
+        insert_download_link(audio_url, $(this));
+      });
+    }
+    // plain
+    if($(".i.snd-icon-plain").length > 0){
+      $(".i.snd-icon-plain").each(function( index ) {
+        var tmp = $( this ).attr("onclick");
+        audio_url = tmp.substring(10, tmp.length-2);
+        insert_download_link(audio_url, $(this));
+      });
+    }
+    // TODO: too lazy to deal with duplicated codes.
+  }
+
 
   else{
     // console.log("no match");

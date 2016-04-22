@@ -24,6 +24,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) VoiceTube [https://tw.voicetube.com/](https://tw.voicetube.com/)
 - (English) Dr.eye 譯典通 [http://yun.dreye.com/dict_new](http://yun.dreye.com/dict_new)
 - (English) Vocabulary.com [https://www.vocabulary.com/](https://www.vocabulary.com/)
+- (English) The Free Dictionary [http://www.thefreedictionary.com/](http://www.thefreedictionary.com/)
 
 ## Add a New Entry
 
