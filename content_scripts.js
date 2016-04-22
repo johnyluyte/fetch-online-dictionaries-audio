@@ -108,19 +108,11 @@ function mainJob(url){
 
   // http://www.japanesepod101.com/
   else if(url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)){
-    if(!$("#dictionary_results .Dictionary .Dictionary_Eng img").length){
+    if(!$(".ill-onebuttonplayer").length){
       return false;
     }
-    $("#dictionary_results .Dictionary .Dictionary_Eng img").each(function( index ){
-      // tmp = PlaySound('http://assets.languagepod101.com/dictionary/japanese/audiomp3.php?id=97886');
-      var tmp = $(this).attr("onclick");
-      audio_url = tmp.substring(11, tmp.length-3);
-      insert_download_link(audio_url, $(this));
-    });
-    $("#dictionary_results .Dictionary .Dictionary_Eng_Alt img").each(function( index ){
-      // Too lazy to tidy up duplicated codes
-      var tmp = $(this).attr("onclick");
-      audio_url = tmp.substring(11, tmp.length-3);
+    $(".ill-onebuttonplayer").each(function( index ){
+      audio_url = $(this).attr("data-url");
       insert_download_link(audio_url, $(this));
     });
   }
