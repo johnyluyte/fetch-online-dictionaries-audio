@@ -25,11 +25,13 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Dr.eye 譯典通 [http://yun.dreye.com/dict_new](http://yun.dreye.com/dict_new)
 - (English) Vocabulary.com [https://www.vocabulary.com/](https://www.vocabulary.com/)
 - (English) The Free Dictionary [http://www.thefreedictionary.com/](http://www.thefreedictionary.com/)
+- (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
 
 ## Add a New Entry
 
 - Find a new Online Dictionary which is not yet being supported.
 - Add its audio distraction rules to `content_scripts.js`.
+- Remove or comment out debug output.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
 - Update version number in `manifest.json`.

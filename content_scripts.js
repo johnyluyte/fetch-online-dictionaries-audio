@@ -222,6 +222,43 @@ function mainJob(url){
     // TODO: too lazy to deal with duplicated codes.
   }
 
+  // TODO: 寫法髒且太過 Hard Code?
+  // https://quizlet.com/
+  else if(url.match(/http[s]?:\/\/*quizlet.com\/*/)){
+    if(!$("a.play-audio").length){
+      return false;
+    }
+    // 從 DOM 裡面找到設定 Quizlet.SetPage 的 <script>
+    var isTarget = function (aikotoba){
+      if( aikotoba === 'Quizlet.SetPage'){
+        return true;
+      }
+      return false;
+    }
+    var targetScript = null;
+    var scripts = document.getElementsByTagName("script")
+    for (var i = 0; i < scripts.length; ++i) {
+        if( isTarget(scripts[i].innerHTML.substring(15, 30)) ){
+          targetScript = scripts[i].innerHTML;
+          break;
+        }
+    }
+    // 取得有 data-id 與 word_audio 關聯的 json
+    var posStart = targetScript.indexOf( '[{' );
+    var posEnd = targetScript.indexOf( '}])' );
+    var my_json = JSON.parse(targetScript.substring(posStart, posEnd + 2));
+    $("a.play-audio").each(function( index ) {
+      // 往上找到所屬之 data-id
+      var data_id = $(this).closest('.has-audio')[0].getAttribute('data-id');
+      for(var i=0;i<my_json.length;i++){
+        if(my_json[i].id == data_id){
+          insert_download_link(my_json[i].word_audio, $(this));
+          break;
+        }
+      }
+    });
+  }
+
 
   else{
     // console.log("no match");
