@@ -26,6 +26,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Vocabulary.com [https://www.vocabulary.com/](https://www.vocabulary.com/)
 - (English) The Free Dictionary [http://www.thefreedictionary.com/](http://www.thefreedictionary.com/)
 - (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
+- (English) Macmillan Dictionary [http://www.macmillandictionary.com/dictionary/](http://www.macmillandictionary.com/dictionary/)
 
 ## Add a New Entry
 

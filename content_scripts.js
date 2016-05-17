@@ -257,7 +257,20 @@ function mainJob(url) {
         }
       }
     });
-  } else {
+  }
+
+  // http://www.macmillandictionary.com/dictionary/british/dog_1
+  else if (url.match(/http[s]?:\/\/*www.macmillandictionary.com\/dictionary\/*/)) {
+    if (!$("span.PRONS").length) {
+      return false;
+    }
+    $("span.PRONS").each(function() {
+      const audioUrl = $(this).children('.audio_play_button').attr("data-src-mp3");
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
+  else {
     // console.log("no match");
     return false;
   }
