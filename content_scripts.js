@@ -6,11 +6,11 @@
     https://developer.chrome.com/extensions/content_scripts
 */
 
-$(function(){
+$(function() {
   mainJob(document.URL);
 });
 
-function mainJob(url){
+function mainJob(url) {
   /*
     1. [REGEX in javascript]
       We do not need double quote "" here, because the function match(reg) requires RGEEX in its argument, and string confounded by double forward slash /MY_REG/ is the RGEEX in javascript
@@ -20,203 +20,203 @@ function mainJob(url){
   */
 
   // https://tw.dictionary.yahoo.com/dictionary?p=wall
-  if(url.match(/http[s]?:\/\/*tw.dictionary.yahoo.com\/*/)){
-    if(!$("audio source").length){
+  if (url.match(/http[s]?:\/\/*tw.dictionary.yahoo.com\/*/)) {
+    if (!$("audio source").length) {
       return false;
     }
-    audio_url = $("audio source").attr("src");
-    insert_download_link(audio_url, '.button-audio');
+    const audioUrl = $("audio source").attr("src");
+    insertDownloadLink(audioUrl, '.button-audio');
   }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
-  else if(url.match(/http:\/\/*www.oxfordlearnersdictionaries.com\/*/)){
-    if(!$(".audio_play_button").length){
+  else if (url.match(/http:\/\/*www.oxfordlearnersdictionaries.com\/*/)) {
+    if (!$(".audio_play_button").length) {
       return false;
     }
-    $(".audio_play_button").each(function( index ) {
-      audio_url = $( this ).attr("data-src-mp3");
-      insert_download_link(audio_url, $(this));
+    $(".audio_play_button").each(function() {
+      const audioUrl = $(this).attr("data-src-mp3");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://jisho.org/
-  else if(url.match(/http:\/\/*jisho.org\/*/)){
-    if(!$("a.concept_audio").length){
+  else if (url.match(/http:\/\/*jisho.org\/*/)) {
+    if (!$("a.concept_audio").length) {
       return false;
     }
-    $("a.concept_audio").each(function( index ) {
-      audio_url = $( this ).prev().children().first().attr("src");
-      insert_download_link(audio_url, $(this));
+    $("a.concept_audio").each(function() {
+      const audioUrl = $(this).prev().children().first().attr("src");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // https://www.moedict.tw/
-  else if(url.match(/http[s]?:\/\/*www.moedict.tw\/*/)){
-    if(!$(".icon-play.playAudio").length){
+  else if (url.match(/http[s]?:\/\/*www.moedict.tw\/*/)) {
+    if (!$(".icon-play.playAudio").length) {
       return false;
     }
-    $(".icon-play.playAudio").each(function( index ) {
-      audio_url = $( this ).children().filter(function(){
-        return $(this).attr("itemprop")=="contentURL";
+    $(".icon-play.playAudio").each(function() {
+      const audioUrl = $(this).children().filter(function() {
+        return $(this).attr("itemprop") === "contentURL";
       }).attr("content");
-      insert_download_link(audio_url, $(this));
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://dictionary.cambridge.org/
-  else if(url.match(/http[s]?:\/\/*dictionary.cambridge.org\/*/)){
-    if(!$(".sound.audio_play_button").length){
+  else if (url.match(/http[s]?:\/\/*dictionary.cambridge.org\/*/)) {
+    if (!$(".sound.audio_play_button").length) {
       return false;
     }
-    $(".sound.audio_play_button").each(function( index ) {
-      audio_url = $( this ).attr("data-src-ogg");
-      insert_download_link(audio_url, $(this));
+    $(".sound.audio_play_button").each(function() {
+      const audioUrl = $(this).attr("data-src-ogg");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://www.godic.net/
-  else if(url.match(/http[s]?:\/\/*www.godic.net\/*/)){
-    if(!$("#dict-body .voice-js.voice-button").length){
+  else if (url.match(/http[s]?:\/\/*www.godic.net\/*/)) {
+    if (!$("#dict-body .voice-js.voice-button").length) {
       return false;
     }
-    $("#dict-body .voice-js.voice-button").each(function( index ){
+    $("#dict-body .voice-js.voice-button").each(function() {
       // 排除掉中文發音
-      if(!$(this).attr("data-rel").match(/langid=de*/)){
+      if (!$(this).attr("data-rel").match(/langid=de*/)) {
         // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
         return;
       }
-      audio_url = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
-      insert_download_link(audio_url, $(this));
+      const audioUrl = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://www.frdic.com/
-  else if(url.match(/http[s]?:\/\/*www.frdic.com\/*/)){
-    if(!$("#dict-body .voice-js.voice-button").length){
+  else if (url.match(/http[s]?:\/\/*www.frdic.com\/*/)) {
+    if (!$("#dict-body .voice-js.voice-button").length) {
       return false;
     }
-    $("#dict-body .voice-js.voice-button").each(function( index ){
+    $("#dict-body .voice-js.voice-button").each(function() {
       // 排除掉中文發音
-      if(!$(this).attr("data-rel").match(/langid=fr*/)){
+      if (!$(this).attr("data-rel").match(/langid=fr*/)) {
         // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
         return;
       }
-      audio_url = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
-      insert_download_link(audio_url, $(this));
+      const audioUrl = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://www.japanesepod101.com/
-  else if(url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)){
-    if(!$(".ill-onebuttonplayer").length){
+  else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)) {
+    if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
-    $(".ill-onebuttonplayer").each(function( index ){
-      audio_url = $(this).attr("data-url");
-      insert_download_link(audio_url, $(this));
+    $(".ill-onebuttonplayer").each(function() {
+      const audioUrl = $(this).attr("data-url");
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://www.learnersdictionary.com/definition/dog
-  else if(url.match(/http[s]?:\/\/*www.learnersdictionary.com\/*/)){
-    if(!$(".fa.fa-volume-up.play_pron").length){
+  else if (url.match(/http[s]?:\/\/*www.learnersdictionary.com\/*/)) {
+    if (!$(".fa.fa-volume-up.play_pron").length) {
       return false;
     }
-    $(".fa.fa-volume-up.play_pron").each(function( index ) {
-      var dir = $( this ).attr("data-dir");
-      var file = $( this ).attr("data-file");
-      audio_url = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
-      insert_download_link(audio_url, $(this));
+    $(".fa.fa-volume-up.play_pron").each(function() {
+      const dir = $(this).attr("data-dir");
+      const file = $(this).attr("data-file");
+      const audioUrl = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // https://tw.voicetube.com/definition/prodigy?ref=def
-  else if(url.match(/http[s]?:\/\/*tw.voicetube.com\/definition\/*/)){
-    if(!$(".audioButton").length){
+  else if (url.match(/http[s]?:\/\/*tw.voicetube.com\/definition\/*/)) {
+    if (!$(".audioButton").length) {
       return false;
     }
-    $(".audioButton").each(function( index ) {
-      audio_url = "https://tw.voicetube.com" + $( this ).attr("href");
-      insert_download_link(audio_url, $(this).parent().parent());
+    $(".audioButton").each(function() {
+      const audioUrl = "https://tw.voicetube.com" + $(this).attr("href");
+      insertDownloadLink(audioUrl, $(this).parent().parent());
     });
   }
 
   // http://www.merriam-webster.com/dictionary/cat
-  else if(url.match(/http[s]?:\/\/*www.merriam-webster.com\/dictionary\/*/)){
-    if(!$(".play-pron").length){
+  else if (url.match(/http[s]?:\/\/*www.merriam-webster.com\/dictionary\/*/)) {
+    if (!$(".play-pron").length) {
       return false;
     }
-    $(".play-pron").each(function( index ) {
-      var dir = $( this ).attr("data-dir");
-      var file = $( this ).attr("data-file");
-      audio_url = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
-      insert_download_link(audio_url, $(this));
+    $(".play-pron").each(function() {
+      const dir = $(this).attr("data-dir");
+      const file = $(this).attr("data-file");
+      const audioUrl = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://yun.dreye.com/dict_new/dict.php?w=dog&hidden_codepage=01
   // http://yun.dreye.com/dict_new/dict.php?w=accordance
-  else if(url.match(/http[s]?:\/\/*yun.dreye.com\/dict_new\/*/)){
+  else if (url.match(/http[s]?:\/\/*yun.dreye.com\/dict_new\/*/)) {
     // 從網址取得查詢的單字
     // Could use split(regex) here to make it less ugly
-    var tmp = url.split('=')[1];
-    var vocab = tmp.split('&')[0];
-    if(!vocab){
+    const tmp = url.split('=')[1];
+    const vocab = tmp.split('&')[0];
+    if (!vocab) {
       return false;
     }
     // 取得第一個字母，並將其轉成大寫，例如 'a' -> 'A'
-    var dir = vocab.charAt(0).toUpperCase();
+    const dir = vocab.charAt(0).toUpperCase();
     // 真人發音(男)
-    if($("#real_pron_m").length){
-      $("#real_pron_m").each(function( index ) {
-        audio_url = "http://yun.dreye.com/dict_new/media/" + dir + "/" + vocab + ".mp3";
-        insert_download_link(audio_url, $(this));
+    if ($("#real_pron_m").length) {
+      $("#real_pron_m").each(function() {
+        const audioUrl = "http://yun.dreye.com/dict_new/media/" + dir + "/" + vocab + ".mp3";
+        insertDownloadLink(audioUrl, $(this));
       });
     }
     // 真人發音(女)
-    if($("#real_pron_f").length){
-      $("#real_pron_f").each(function( index ) {
-        audio_url = "http://yun.dreye.com/dict_new/female_media/" + dir + "/" + vocab + ".mp3";
-        insert_download_link(audio_url, $(this));
+    if ($("#real_pron_f").length) {
+      $("#real_pron_f").each(function() {
+        const audioUrl = "http://yun.dreye.com/dict_new/female_media/" + dir + "/" + vocab + ".mp3";
+        insertDownloadLink(audioUrl, $(this));
       });
     }
   }
 
   // https://www.vocabulary.com/dictionary/dog
-  else if(url.match(/http[s]?:\/\/*www.vocabulary.com\/dictionary\/*/)){
-    if(!$("a.audio").length){
+  else if (url.match(/http[s]?:\/\/*www.vocabulary.com\/dictionary\/*/)) {
+    if (!$("a.audio").length) {
       return false;
     }
-    $("a.audio").each(function( index ) {
-      audio_url = "https://audio.vocab.com/1.0/us/" + $( this ).attr("data-audio") + ".mp3";
-      insert_download_link(audio_url, $(this));
+    $("a.audio").each(function() {
+      const audioUrl = "https://audio.vocab.com/1.0/us/" + $(this).attr("data-audio") + ".mp3";
+      insertDownloadLink(audioUrl, $(this));
     });
   }
 
   // http://www.thefreedictionary.com/dog
-  else if(url.match(/http[s]?:\/\/*www.thefreedictionary.com\/*/)){
+  else if (url.match(/http[s]?:\/\/*www.thefreedictionary.com\/*/)) {
     // 美國
-    if($(".i.snd-icon-US").length > 0){
-      $(".i.snd-icon-US").each(function( index ) {
-        var tmp = $( this ).attr("onclick");
-        audio_url = tmp.substring(10, tmp.length-2);
-        insert_download_link(audio_url, $(this));
+    if ($(".i.snd-icon-US").length > 0) {
+      $(".i.snd-icon-US").each(function() {
+        const tmp = $(this).attr("onclick");
+        const audioUrl = tmp.substring(10, tmp.length - 2);
+        insertDownloadLink(audioUrl, $(this));
       });
     }
     // 英國
-    if($(".i.snd-icon-UK").length > 0){
-      $(".i.snd-icon-UK").each(function( index ) {
-        var tmp = $( this ).attr("onclick");
-        audio_url = tmp.substring(10, tmp.length-2);
-        insert_download_link(audio_url, $(this));
+    if ($(".i.snd-icon-UK").length > 0) {
+      $(".i.snd-icon-UK").each(function() {
+        const tmp = $(this).attr("onclick");
+        const audioUrl = tmp.substring(10, tmp.length - 2);
+        insertDownloadLink(audioUrl, $(this));
       });
     }
     // plain
-    if($(".i.snd-icon-plain").length > 0){
-      $(".i.snd-icon-plain").each(function( index ) {
-        var tmp = $( this ).attr("onclick");
-        audio_url = tmp.substring(10, tmp.length-2);
-        insert_download_link(audio_url, $(this));
+    if ($(".i.snd-icon-plain").length > 0) {
+      $(".i.snd-icon-plain").each(function() {
+        const tmp = $(this).attr("onclick");
+        const audioUrl = tmp.substring(10, tmp.length - 2);
+        insertDownloadLink(audioUrl, $(this));
       });
     }
     // TODO: too lazy to deal with duplicated codes.
@@ -224,52 +224,49 @@ function mainJob(url){
 
   // TODO: 寫法髒且太過 Hard Code?
   // https://quizlet.com/
-  else if(url.match(/http[s]?:\/\/*quizlet.com\/*/)){
-    if(!$("a.play-audio").length){
+  else if (url.match(/http[s]?:\/\/*quizlet.com\/*/)) {
+    if (!$("a.play-audio").length) {
       return false;
     }
     // 從 DOM 裡面找到設定 Quizlet.SetPage 的 <script>
-    var isTarget = function (aikotoba){
-      if( aikotoba === 'Quizlet.SetPage'){
+    const isTarget = function(aikotoba) {
+      if (aikotoba === 'Quizlet.SetPage') {
         return true;
       }
       return false;
-    }
-    var targetScript = null;
-    var scripts = document.getElementsByTagName("script")
-    for (var i = 0; i < scripts.length; ++i) {
-        if( isTarget(scripts[i].innerHTML.substring(15, 30)) ){
-          targetScript = scripts[i].innerHTML;
-          break;
-        }
+    };
+    const scripts = document.getElementsByTagName("script");
+    let targetScript = null;
+    for (let i = 0; i < scripts.length; ++i) {
+      if (isTarget(scripts[i].innerHTML.substring(15, 30))) {
+        targetScript = scripts[i].innerHTML;
+        break;
+      }
     }
     // 取得有 data-id 與 word_audio 關聯的 json
-    var posStart = targetScript.indexOf( '[{' );
-    var posEnd = targetScript.indexOf( '}])' );
-    var my_json = JSON.parse(targetScript.substring(posStart, posEnd + 2));
-    $("a.play-audio").each(function( index ) {
+    const posStart = targetScript.indexOf('[{');
+    const posEnd = targetScript.indexOf('}])');
+    const myJson = JSON.parse(targetScript.substring(posStart, posEnd + 2));
+    $("a.play-audio").each(function() {
       // 往上找到所屬之 data-id
-      var data_id = $(this).closest('.has-audio')[0].getAttribute('data-id');
-      for(var i=0;i<my_json.length;i++){
-        if(my_json[i].id == data_id){
-          insert_download_link(my_json[i].word_audio, $(this));
+      const dataId = $(this).closest('.has-audio')[0].getAttribute('data-id');
+      for (let i = 0; i < myJson.length; i++) {
+        if (myJson[i].id === dataId) {
+          insertDownloadLink(myJson[i].word_audio, $(this));
           break;
         }
       }
     });
-  }
-
-
-  else{
+  } else {
     // console.log("no match");
     return false;
   }
 }
 
-function insert_download_link(audio_url, insert_after){
-  // console.log("audio_url = " + audio_url);
-  img_url = chrome.extension.getURL('icons/icon_24.png');
-  $("<span style='font-size:14px'><a target='_blank' href='" + audio_url + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + img_url + "' alt='Download Audio' height='16' width='16'></a></font>").insertAfter(insert_after);
+function insertDownloadLink(audioUrl, insertAfterDOM) {
+  // console.log("audioUrl = " + audioUrl);
+  const imageUrl = chrome.extension.getURL('icons/icon_24.png');
+  $("<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + imageUrl + "' alt='Download Audio' height='16' width='16'></a></font>").insertAfter(insertAfterDOM);
 }
 
 
@@ -283,8 +280,8 @@ function insert_download_link(audio_url, insert_after){
 */
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if (request.greeting == "onClickedPageActionButton"){
+    if (request.greeting === "onClickedPageActionButton") {
       mainJob(document.URL);
       sendResponse({farewell: "goodbye"});
     }
-});
+  });
