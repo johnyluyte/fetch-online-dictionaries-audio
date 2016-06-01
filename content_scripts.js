@@ -270,6 +270,17 @@ function mainJob(url) {
     });
   }
 
+  // http://www.vietnamesepod101.com/
+  else if (url.match(/http[s]?:\/\/*www.vietnamesepod101.com\/vietnamese-dictionary\/*/)) {
+    if (!$(".ill-onebuttonplayer").length) {
+      return false;
+    }
+    $(".ill-onebuttonplayer").each(function() {
+      const audioUrl = $(this).attr("data-url");
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
   else {
     // console.log("no match");
     return false;

@@ -17,7 +17,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
 - (English) Cambridge Dictionaries online [http://dictionary.cambridge.org/](http://dictionary.cambridge.org/)
 - (German/Deutsch) 德语助手 [http://www.godic.net/](http://www.godic.net/)
-- (Japanese) Japanesepod101 [http://www.japanesepod101.com/](http://www.japanesepod101.com/)
+- (Japanese) Japanesepod101 [http://www.japanesepod101.com/](http://www.japanesepod101.com/japanese-dictionary/)
 - (France/French) 法语助手 [http://www.frdic.com/](http://www.frdic.com/)
 - (English) Learner's Dictionary [http://www.learnersdictionary.com/](http://www.learnersdictionary.com/)
 - (English) Merriam-Webster [http://www.merriam-webster.com/](http://www.merriam-webster.com/)
@@ -27,6 +27,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) The Free Dictionary [http://www.thefreedictionary.com/](http://www.thefreedictionary.com/)
 - (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
 - (English) Macmillan Dictionary [http://www.macmillandictionary.com/dictionary/](http://www.macmillandictionary.com/dictionary/)
+- (Vietnamese) Vietnamesepod101 [http://www.vietnamesepod101.com/](http://www.vietnamesepod101.com/vietnamese-dictionary/)
 
 ## Add a New Entry
 
