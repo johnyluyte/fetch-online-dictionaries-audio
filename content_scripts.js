@@ -281,6 +281,29 @@ function mainJob(url) {
     });
   }
 
+  // http://dict.hjenglish.com/
+  else if (url.match(/http[s]?:\/\/*dict.hjenglish.com\/*/)) {
+    if (!$(".voice_track").length) {
+      return false;
+    }
+    $(".voice_track").each(function() {
+      const audioUrl = $(this).attr("src");
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
+  // http://tratu.coviet.vn/
+  else if (url.match(/http[s]?:\/\/*tratu.coviet.vn\/*/)) {
+    if (!$("#sound > param[name='FlashVars']").length) {
+      return false;
+    }
+    $("#sound > param[name='FlashVars']").each(function() {
+      const value = $(this).attr("value");
+      const audioUrl = value.substring(5, value.length - 16);
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
   else {
     // console.log("no match");
     return false;

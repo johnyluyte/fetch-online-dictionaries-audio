@@ -26,6 +26,9 @@
       "no-var": "error",
       "brace-style": "off",
       "indent": ["error", 2]
+    },
+    "globals": {
+        "chrome": false
     }
   }
 }

@@ -28,17 +28,18 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
 - (English) Macmillan Dictionary [http://www.macmillandictionary.com/dictionary/](http://www.macmillandictionary.com/dictionary/)
 - (Vietnamese) Vietnamesepod101 [http://www.vietnamesepod101.com/](http://www.vietnamesepod101.com/vietnamese-dictionary/)
+- (J/E) 沪江小d [http://dict.hjenglish.com/](http://dict.hjenglish.com/)
+- (Vietnamese) tratu.coviet.vn [http://tratu.coviet.vn/](http://tratu.coviet.vn/)
 
 ## Add a New Entry
 
 - Find a new Online Dictionary which is not yet being supported.
-- Add its audio distraction rules to `content_scripts.js`.
-- Remove or comment out debug output.
+- Add its audio extraction rules to `content_scripts.js`.
+- Remove or comment out debug message.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
 - Update version number in `manifest.json`.
-- Update `notification page`. (will show when upgraded to a new version)
-  - Add version notes.
+- Add version notes in `updates.html`.
 - Commit & Push to github.
 - Update & publish to Google Chrome Store.
 - Add the site's name to `blog page`.
