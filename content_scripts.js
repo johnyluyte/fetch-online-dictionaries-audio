@@ -304,6 +304,27 @@ function mainJob(url) {
     });
   }
 
+
+  // http://www.yueyv.cn/
+  else if (url.match(/http[s]?:\/\/*www.yueyv.cn\/*/)) {
+    // 單字發音
+    if ($(".dictvoice").length) {
+      $(".dictvoice").each(function() {
+        const target = $(this).attr("data-rel");
+        const audioUrl = 'http://www.yueyv.cn/voice/' + target + '.mp3';
+        insertDownloadLink(audioUrl, $(this));
+      });
+    }
+    // 例句發音
+    if ($("audio[id^=mediacontrol]").length) {
+      $("audio[id^=mediacontrol]").each(function() {
+        const target = $(this).attr("src");
+        const audioUrl = 'http://www.yueyv.cn/' + target;
+        insertDownloadLink(audioUrl, $(this));
+      });
+    }
+  }
+
   else {
     // console.log("no match");
     return false;

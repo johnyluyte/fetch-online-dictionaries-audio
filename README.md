@@ -30,6 +30,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (Vietnamese) Vietnamesepod101 [http://www.vietnamesepod101.com/](http://www.vietnamesepod101.com/vietnamese-dictionary/)
 - (J/E) 沪江小d [http://dict.hjenglish.com/](http://dict.hjenglish.com/)
 - (Vietnamese) tratu.coviet.vn [http://tratu.coviet.vn/](http://tratu.coviet.vn/)
+- (粵語) 粵語發音詞典 [http://www.yueyv.cn/](http://www.yueyv.cn/)
 
 ## Add a New Entry
 
