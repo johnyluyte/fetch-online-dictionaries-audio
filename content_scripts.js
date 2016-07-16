@@ -69,7 +69,7 @@ function mainJob(url) {
       return false;
     }
     $(".sound.audio_play_button").each(function() {
-      const audioUrl = $(this).attr("data-src-ogg");
+      const audioUrl = $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this));
     });
   }
@@ -323,6 +323,19 @@ function mainJob(url) {
         insertDownloadLink(audioUrl, $(this));
       });
     }
+  }
+
+  // http://www.dictionary.com/
+  else if (url.match(/http[s]?:\/\/*www.dictionary.com\/*/)) {
+    if (!$(".audio-wrapper").length) {
+      return false;
+    }
+    $(".audio-wrapper>audio").each(function() {
+      const audioUrl = $(this).children().filter(function() {
+        return $(this).attr('type') === 'audio/mpeg';
+      }).attr("src");
+      insertDownloadLink(audioUrl, $(this).parent());
+    });
   }
 
   else {

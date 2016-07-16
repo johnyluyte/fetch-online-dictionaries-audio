@@ -31,6 +31,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (J/E) 沪江小d [http://dict.hjenglish.com/](http://dict.hjenglish.com/)
 - (Vietnamese) tratu.coviet.vn [http://tratu.coviet.vn/](http://tratu.coviet.vn/)
 - (粵語) 粵語發音詞典 [http://www.yueyv.cn/](http://www.yueyv.cn/)
+- (English) Dictionary.com [http://www.dictionary.com/](http://www.dictionary.com/)
 
 ## Add a New Entry
 
