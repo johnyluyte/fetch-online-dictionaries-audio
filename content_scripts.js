@@ -304,7 +304,6 @@ function mainJob(url) {
     });
   }
 
-
   // http://www.yueyv.cn/
   else if (url.match(/http[s]?:\/\/*www.yueyv.cn\/*/)) {
     // 單字發音
@@ -338,6 +337,32 @@ function mainJob(url) {
     });
   }
 
+  // http://www.gavo.t.u-tokyo.ac.jp/ojad/
+  else if (url.match(/http[s]?:\/\/*www.gavo.t.u-tokyo.ac.jp\/ojad\/*/)) {
+    const preUrl = "http://www.gavo.t.u-tokyo.ac.jp/ojad/sound4/mp3/";
+    // 女生發音
+    if (!$(".katsuyo_proc_female_button").length) {
+      return false;
+    }
+    $(".katsuyo_proc_female_button").each(function() {
+      const audioUrl = ojadGetURL(preUrl + "female/", $(this).attr("id") + ".mp3");
+      if (audioUrl !== null) {
+        insertDownloadLink(audioUrl, $(this).parent().prev());
+      }
+    });
+    // 男生發音
+    if (!$(".katsuyo_proc_male_button").length) {
+      return false;
+    }
+    $(".katsuyo_proc_male_button").each(function() {
+      const audioUrl = ojadGetURL(preUrl + "male/", $(this).attr("id") + ".mp3");
+      if (audioUrl !== null) {
+        insertDownloadLink(audioUrl, $(this).parent().prev());
+      }
+    });
+  }
+  // TODO: too lazy to tidy up duplicated codes
+
   else {
     // console.log("no match");
     return false;
@@ -348,6 +373,23 @@ function insertDownloadLink(audioUrl, insertAfterDOM) {
   // console.log("audioUrl = " + audioUrl);
   const imageUrl = chrome.extension.getURL('icons/icon_24.png');
   $("<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + imageUrl + "' alt='Download Audio' height='16' width='16'></a></font>").insertAfter(insertAfterDOM);
+}
+
+function ojadGetURL(preUrl, fileName) {
+  const myRegexp = /(.*?)_(.*)_/g;
+  const regexResult = myRegexp.exec(fileName);
+  if (regexResult === null) {
+    return null;
+  }
+  const prefix = regexResult[1];
+  // console.log(prefix);
+
+  let categoryUrl = Math.floor(prefix / 100).toString();
+  while (categoryUrl.length < 3) {
+    categoryUrl = "0" + categoryUrl;
+  }
+  // console.log(categoryUrl);
+  return preUrl + categoryUrl + "/" + fileName;
 }
 
 
