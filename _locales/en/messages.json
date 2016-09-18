@@ -5,7 +5,7 @@
   },
   "extDescription": {
     "description": "Extension description.",
-    "message": "This Chrome Extension adds links to download audio for several online dictionaries sites."
+    "message": "This Chrome Extension adds audio download links for several online dictionaries."
   },
   "textDownloadAudio": {
     "description": "Description for Download button.",
@@ -25,15 +25,15 @@
   },
   "textUserPrivacy": {
     "description": "User Data Privacy",
-    "message": "This Chorme Extension does not collect any user data. You can check out the source codes at github above."
+    "message": "This Chorme Extension does not collect any user data. Please see the source code at github above."
   },
   "textCopyRight": {
     "description": "Copy Rights",
-    "message": "The copyright of the audio clips belong to their original owners."
+    "message": "The copyright of all audio clips belong to their original owners."
   },
   "textSupportedSitesLists": {
     "description": "Description for Download button.",
-    "message": "http://tw.dictionary.yahoo.com/,http://www.oxfordlearnersdictionaries.com/,http://jisho.org/,http://www.moedict.tw/,http://dictionary.cambridge.org/,http://www.godic.net/,http://www.japanesepod101.com/,http://www.frdic.com/,http://www.learnersdictionary.com/,http://www.merriam-webster.com/,https://tw.voicetube.com/,http://yun.dreye.com/dict_new/,https://www.vocabulary.com/,http://www.thefreedictionary.com/,https://quizlet.com/,http://www.macmillandictionary.com/dictionary/,http://www.vietnamesepod101.com/,http://dict.hjenglish.com/,http://tratu.coviet.vn/,http://www.yueyv.cn/,http://www.dictionary.com/,http://www.gavo.t.u-tokyo.ac.jp/ojad/"
+    "message": "http://tw.dictionary.yahoo.com/,http://www.oxfordlearnersdictionaries.com/,http://jisho.org/,http://www.moedict.tw/,http://dictionary.cambridge.org/,http://www.godic.net/,http://www.japanesepod101.com/,http://www.frdic.com/,http://www.learnersdictionary.com/,http://www.merriam-webster.com/,https://tw.voicetube.com/,http://yun.dreye.com/dict_new/,https://www.vocabulary.com/,http://www.thefreedictionary.com/,https://quizlet.com/,http://www.macmillandictionary.com/dictionary/,http://www.vietnamesepod101.com/,http://dict.hjenglish.com/,http://tratu.coviet.vn/,http://www.yueyv.cn/,http://www.dictionary.com/,http://www.gavo.t.u-tokyo.ac.jp/ojad/,http://www.youdao.com/"
   }
 
 }

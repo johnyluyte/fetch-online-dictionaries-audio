@@ -361,6 +361,18 @@ function mainJob(url) {
       }
     });
   }
+
+  // http://www.youdao.com/
+  else if (url.match(/http[s]?:\/\/*www.youdao.com\/*/)) {
+    if (!$(".dictvoice").length) {
+      return false;
+    }
+    $(".dictvoice").each(function() {
+      const audioUrl = "http://dict.youdao.com/dictvoice?audio=" + $(this).attr("data-rel");
+      insertDownloadLink(audioUrl, $(this).parent());
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {

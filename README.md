@@ -33,6 +33,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (粵語) 粵語發音詞典 [http://www.yueyv.cn/](http://www.yueyv.cn/)
 - (English) Dictionary.com [http://www.dictionary.com/](http://www.dictionary.com/)
 - (Japanese) Online Japanese Accent Dictionary [http://www.gavo.t.u-tokyo.ac.jp/ojad/](http://www.gavo.t.u-tokyo.ac.jp/ojad/)
+- (English) 有道詞典 [http://www.youdao.com/](http://www.youdao.com/)
 
 ## Add a New Entry
 
