@@ -142,7 +142,7 @@ function mainJob(url) {
   }
 
   // http://www.merriam-webster.com/dictionary/cat
-  else if (url.match(/http[s]?:\/\/*www.merriam-webster.com\/dictionary\/*/)) {
+  else if (url.match(/http[s]?:\/\/*www.merriam-webster.com\/*/)) {
     if (!$(".play-pron").length) {
       return false;
     }
