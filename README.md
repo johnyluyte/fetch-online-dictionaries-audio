@@ -34,6 +34,9 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Dictionary.com [http://www.dictionary.com/](http://www.dictionary.com/)
 - (Japanese) Online Japanese Accent Dictionary [http://www.gavo.t.u-tokyo.ac.jp/ojad/](http://www.gavo.t.u-tokyo.ac.jp/ojad/)
 - (English) 有道詞典 [http://www.youdao.com/](http://www.youdao.com/)
+- (English) Longman Dictionary of Contemporary English [http://www.ldoceonline.com/](http://www.ldoceonline.com/)
+- (All) Linguee [http://www.linguee.com/](http://www.linguee.com/)
+- (English/German) BeoLingus [http://dict.tu-chemnitz.de/](http://dict.tu-chemnitz.de/)
 
 ## Add a New Entry
 

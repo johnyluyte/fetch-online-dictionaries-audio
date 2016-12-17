@@ -373,6 +373,41 @@ function mainJob(url) {
     });
   }
 
+  // http://www.ldoceonline.com/dictionary/
+  else if (url.match(/http[s]?:\/\/*www.ldoceonline.com\/dictionary\/*/)) {
+    if (!$(".speaker").length) {
+      return false;
+    }
+    $(".speaker").each(function() {
+      const audioUrl = $(this).attr("data-src-mp3");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
+  // http://www.linguee.com/
+  else if (url.match(/http[s]?:\/\/*www.linguee.com\/*/)) {
+    if (!$(".audio").length) {
+      return false;
+    }
+    $(".audio").each(function() {
+      const audioUrl = "http://www.linguee.com/mp3/" + $(this).attr("id");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
+  // http://dict.tu-chemnitz.de/
+  else if (url.match(/http[s]?:\/\/*dict.tu-chemnitz.de\/*/)) {
+    console.log($("img[src*='/pics/s1.png']").length);
+    if (!$("img[src*='/pics/s1.png']").length) {
+      return false;
+    }
+    $("img[src*='/pics/s1.png']").parent().each(function() {
+      const tmp = $(this).attr("href");
+      const audioUrl = "http://dict.tu-chemnitz.de/speak-" + tuchemnitz(tmp.substring(17, tmp.length - 2)) + ".mp3";
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {
@@ -381,10 +416,26 @@ function mainJob(url) {
   }
 }
 
-function insertDownloadLink(audioUrl, insertAfterDOM) {
+function insertDownloadLink(audioUrl, insertAfterDOM, isInsertLogo = true) {
   // console.log("audioUrl = " + audioUrl);
   const imageUrl = chrome.extension.getURL('icons/icon_24.png');
-  $("<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio") + "<img src='" + imageUrl + "' alt='Download Audio' height='16' width='16'></a></font>").insertAfter(insertAfterDOM);
+  let HTML = "<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio")
+  if (isInsertLogo) {
+    HTML += "<img src='" + imageUrl + "' alt='Download Audio' height='16' width='16'>"
+  }
+  HTML += "</a></font>"
+  $(HTML).insertAfter(insertAfterDOM);
+}
+
+
+function tuchemnitz(fileName) {
+  const myRegexp = /(.*?);(.*)/g;
+  const regexResult = myRegexp.exec(fileName);
+  if (regexResult === null) {
+    return null;
+  }
+  // console.log(regexResult);
+  return regexResult[1];
 }
 
 function ojadGetURL(preUrl, fileName) {
