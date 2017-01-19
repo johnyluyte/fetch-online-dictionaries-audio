@@ -21,10 +21,10 @@ function mainJob(url) {
 
   // https://tw.dictionary.yahoo.com/dictionary?p=wall
   if (url.match(/http[s]?:\/\/*tw.dictionary.yahoo.com\/*/)) {
-    if (!$("audio source").length) {
+    if (!$("audio").length) {
       return false;
     }
-    const audioUrl = $("audio source").attr("src");
+    const audioUrl = $("audio").attr("src");
     insertDownloadLink(audioUrl, '.button-audio');
   }
 
