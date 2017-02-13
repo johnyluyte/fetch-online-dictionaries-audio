@@ -408,6 +408,37 @@ function mainJob(url) {
     });
   }
 
+  // http://www.thai2english.com
+  else if (url.match(/http[s]?:\/\/*www.thai2english.com\/*/)) {
+    if (!$("img[src*='img/sound.gif']").length) {
+      return false;
+    }
+    $("img[src*='/img/sound.gif']").each(function() {
+      const tmp = $(this).parent().attr("onclick");  // PlaySound('ป่า', 1370321)
+      const regexResult = /(.*), (.*)\)/g.exec(tmp);
+      const id = regexResult[2];  // 1370321)
+      const audioUrl = "http://www.thai2english.com/sounds/" + id + ".mp3" ;
+      // console.log(audioUrl);
+      insertDownloadLink(audioUrl, $(this).parent(), false);
+    });
+  }
+
+  // http://www.thai-language.com
+  else if (url.match(/http[s]?:\/\/*www.thai-language.com\/*/)) {
+    if (!$("img[src*='img/speaker_sm.gif']").length) {
+      return false;
+    }
+    $("img[src*='/img/speaker_sm.gif']").each(function() {
+      const tmp = $(this).parent().attr("onclick");  // PlayAudioFile('/audio/P202463.wma')
+      const regexResult = /PlayAudioFile\('(.*)'\)/g.exec(tmp);
+      const id = regexResult[1];  //
+      const audioUrl = "http://www.thai-language.com" + id;
+      // console.log(audioUrl);
+      insertDownloadLink(audioUrl, $(this).parent(), false);
+    });
+  }
+
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {

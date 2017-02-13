@@ -37,6 +37,8 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Longman Dictionary of Contemporary English [http://www.ldoceonline.com/](http://www.ldoceonline.com/)
 - (All) Linguee [http://www.linguee.com/](http://www.linguee.com/)
 - (English/German) BeoLingus [http://dict.tu-chemnitz.de/](http://dict.tu-chemnitz.de/)
+- (English/Thai) thai2english [http://www.thai2english.com/](http://www.thai2english.com/)
+- (English/Thai) thai-language.com [http://www.thai-language.com](http://www.thai-language.com)
 
 ## Add a New Entry
 
