@@ -107,7 +107,7 @@ function mainJob(url) {
   }
 
   // http://www.japanesepod101.com/
-  else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/japanese-dictionary\/*/)) {
+  else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/learningcenter\/*/)) {
     if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
@@ -271,7 +271,7 @@ function mainJob(url) {
   }
 
   // http://www.vietnamesepod101.com/
-  else if (url.match(/http[s]?:\/\/*www.vietnamesepod101.com\/vietnamese-dictionary\/*/)) {
+  else if (url.match(/http[s]?:\/\/*www.vietnamesepod101.com\/learningcenter\/*/)) {
     if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
