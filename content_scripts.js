@@ -107,7 +107,18 @@ function mainJob(url) {
   }
 
   // http://www.japanesepod101.com/
-  else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/learningcenter\/*/)) {
+  else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/*/)) {
+    if (!$(".ill-onebuttonplayer").length) {
+      return false;
+    }
+    $(".ill-onebuttonplayer").each(function() {
+      const audioUrl = $(this).attr("data-url");
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
+  // http://www.vietnamesepod101.com/
+  else if (url.match(/http[s]?:\/\/*www.vietnamesepod101.com\/*/)) {
     if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
@@ -266,17 +277,6 @@ function mainJob(url) {
     }
     $("span.PRONS").each(function() {
       const audioUrl = $(this).children('.audio_play_button').attr("data-src-mp3");
-      insertDownloadLink(audioUrl, $(this));
-    });
-  }
-
-  // http://www.vietnamesepod101.com/
-  else if (url.match(/http[s]?:\/\/*www.vietnamesepod101.com\/learningcenter\/*/)) {
-    if (!$(".ill-onebuttonplayer").length) {
-      return false;
-    }
-    $(".ill-onebuttonplayer").each(function() {
-      const audioUrl = $(this).attr("data-url");
       insertDownloadLink(audioUrl, $(this));
     });
   }
