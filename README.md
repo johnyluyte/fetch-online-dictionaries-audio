@@ -39,6 +39,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English/German) BeoLingus [http://dict.tu-chemnitz.de/](http://dict.tu-chemnitz.de/)
 - (English/Thai) thai2english [http://www.thai2english.com/](http://www.thai2english.com/)
 - (English/Thai) thai-language.com [http://www.thai-language.com](http://www.thai-language.com)
+- (English) Dict.cn [http://dict.cn](http://dict.cn)
 
 ## Add a New Entry
 

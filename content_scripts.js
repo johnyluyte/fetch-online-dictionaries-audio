@@ -438,6 +438,16 @@ function mainJob(url) {
     });
   }
 
+  // http://dict.cn/
+  else if (url.match(/http[s]?:\/\/*dict.cn\/*/)) {
+    if (!$(".sound").length) {
+      return false;
+    }
+    $(".sound").each(function() {
+      const audioUrl = "http://audio.dict.cn/" + $(this).attr("naudio");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
 
   // TODO: too lazy to tidy up duplicated codes
 
