@@ -449,6 +449,17 @@ function mainJob(url) {
     });
   }
 
+  // https://www.collinsdictionary.com/
+  else if (url.match(/http[s]?:\/\/*www.collinsdictionary.com\/*/)) {
+    if (!$(".audio_play_button").length) {
+      return false;
+    }
+    $(".audio_play_button").each(function() {
+      const audioUrl = "https://www.collinsdictionary.com" + $(this).attr("data-src-mp3");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {
