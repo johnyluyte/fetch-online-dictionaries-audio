@@ -460,6 +460,17 @@ function mainJob(url) {
     });
   }
 
+  // http://dic.naver.com
+  else if (url.match(/http[s]?:\/\/*dic.naver.com\/*/)) {
+    if (!$("a.play").length) {
+      return false;
+    }
+    $("a.play").each(function() {
+      const audioUrl = $(this).attr("playlist");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {

@@ -41,6 +41,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English/Thai) thai-language.com [http://www.thai-language.com](http://www.thai-language.com)
 - (English) Dict.cn [http://dict.cn](http://dict.cn)
 - (All) Collins Dictionary [https://www.collinsdictionary.com/](https://www.collinsdictionary.com/)
+- (Korean) Naver Dictionary [http://dic.naver.com](http://dic.naver.com)
 
 ## Add a New Entry
 
