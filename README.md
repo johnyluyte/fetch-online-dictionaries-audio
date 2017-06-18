@@ -22,7 +22,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Learner's Dictionary [http://www.learnersdictionary.com/](http://www.learnersdictionary.com/)
 - (English) Merriam-Webster [http://www.merriam-webster.com/](http://www.merriam-webster.com/)
 - (English) VoiceTube [https://tw.voicetube.com/](https://tw.voicetube.com/)
-- (English) Dr.eye 譯典通 [http://yun.dreye.com/dict_new](http://yun.dreye.com/dict_new)
+- (English) Dr.eye 譯典通 [http://yun.dreye.com/dict_new/](http://yun.dreye.com/dict_new/)
 - (English) Vocabulary.com [https://www.vocabulary.com/](https://www.vocabulary.com/)
 - (English) The Free Dictionary [http://www.thefreedictionary.com/](http://www.thefreedictionary.com/)
 - (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
@@ -38,10 +38,12 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (All) Linguee [http://www.linguee.com/](http://www.linguee.com/)
 - (English/German) BeoLingus [http://dict.tu-chemnitz.de/](http://dict.tu-chemnitz.de/)
 - (English/Thai) thai2english [http://www.thai2english.com/](http://www.thai2english.com/)
-- (English/Thai) thai-language.com [http://www.thai-language.com](http://www.thai-language.com)
-- (English) Dict.cn [http://dict.cn](http://dict.cn)
+- (English/Thai) thai-language.com [http://www.thai-language.com/](http://www.thai-language.com/)
+- (English) Dict.cn [http://dict.cn/](http://dict.cn/)
 - (All) Collins Dictionary [https://www.collinsdictionary.com/](https://www.collinsdictionary.com/)
-- (Korean) Naver Dictionary [http://dic.naver.com](http://dic.naver.com)
+- (Korean) Naver Dictionary [http://dic.naver.com/](http://dic.naver.com/)
+- (漢語) 漢典 [http://www.zdic.net/](http://www.zdic.net/)
+- (English) 歐路辭典 [http://dict.eudic.net/](http://dict.eudic.net/)
 
 ## Add a New Entry
 

@@ -471,6 +471,28 @@ function mainJob(url) {
     });
   }
 
+  // http://www.zdic.net/z
+  else if (url.match(/http[s]?:\/\/*www.zdic.net\/z\/*/)) {
+    if (!$("i.sound").length) {
+      return false;
+    }
+    $("i.sound").each(function() {
+      const audioUrl = "http://www.zdic.net/p/mp3/" + $(this).attr("audio") + ".mp3";
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
+  // http://dict.eudic.net/dicts/en/
+  else if (url.match(/http[s]?:\/\/*dict.eudic.net\/dicts\/en\/*/)) {
+    if (!$("a.voice-button").length) {
+      return false;
+    }
+    $("a.voice-button").each(function() {
+      const audioUrl = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {
