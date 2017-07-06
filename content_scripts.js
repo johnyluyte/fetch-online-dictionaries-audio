@@ -493,6 +493,17 @@ function mainJob(url) {
     });
   }
 
+  // http://e-dictionary.apc.gov.tw/
+  else if (url.match(/http[s]?:\/\/*e-dictionary.apc.gov.tw\/*/)) {
+    if (!$("a.play").length) {
+      return false;
+    }
+    $("a.play").each(function() {
+      const audioUrl = "http://e-dictionary.apc.gov.tw" + $(this).attr("rel");
+      insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
 
   else {
