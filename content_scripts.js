@@ -504,7 +504,6 @@ function mainJob(url) {
     });
   }
 
-
   // https://learngerman.dw.com/en/
   else if (url.match(/http[s]?:\/\/*learngerman.dw.com\/en\/*/)) {
     if (!$("a.audio-link > audio > source").length) {
@@ -531,6 +530,20 @@ function mainJob(url) {
       insertDownloadLink(prefix + $("#aud2 > source").attr("src"), $(this), true, `(UK-RP)<br/>`);
       insertDownloadLink(prefix + $("#aud1 > source").attr("src"), $(this), true, `(UK)<br/>`);
       insertDownloadLink(prefix + $("#aud0 > source").attr("src"), $(this), true, `(US)<br/>`);
+    });
+  }
+
+  // https://itaigi.tw/k/%E9%86%AB%E7%94%9F
+  else if (url.match(/http[s]?:\/\/*itaigi.tw\/*/)) {
+    if (!$(".HuatIm > audio > source").length) {
+      return false;
+    }
+    $(".HuatIm > audio > source").each(function () {
+      let audioUrl = $(this).attr("src");
+      if (!audioUrl.includes(`.mp3`)) {
+        audioUrl += `.mp3`
+      }
+      insertDownloadLink(audioUrl, $(this).parent().parent());
     });
   }
 

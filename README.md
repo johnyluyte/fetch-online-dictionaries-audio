@@ -47,6 +47,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (原住民語) 原住民族語言線上辭典 [http://e-dictionary.apc.gov.tw/](http://e-dictionary.apc.gov.tw/)
 - (English/German) learngerman.dw.com [https://learngerman.dw.com/](https://learngerman.dw.com/)
 - (English) WordReference [http://www.wordreference.com/](http://www.wordreference.com/)
+- (台語) i taigi [https://itaigi.tw](https://itaigi.tw)
 
 ## Add a New Entry
 
