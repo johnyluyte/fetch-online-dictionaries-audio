@@ -46,6 +46,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) 歐路辭典 [http://dict.eudic.net/](http://dict.eudic.net/)
 - (原住民語) 原住民族語言線上辭典 [http://e-dictionary.apc.gov.tw/](http://e-dictionary.apc.gov.tw/)
 - (English/German) learngerman.dw.com [https://learngerman.dw.com/](https://learngerman.dw.com/)
+- (English) WordReference [http://www.wordreference.com/](http://www.wordreference.com/)
 
 ## Add a New Entry
 

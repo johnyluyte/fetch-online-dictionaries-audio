@@ -6,7 +6,7 @@
     https://developer.chrome.com/extensions/content_scripts
 */
 
-$(function() {
+$(function () {
   mainJob(document.URL);
 });
 
@@ -33,7 +33,7 @@ function mainJob(url) {
     if (!$(".audio_play_button").length) {
       return false;
     }
-    $(".audio_play_button").each(function() {
+    $(".audio_play_button").each(function () {
       const audioUrl = $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -44,7 +44,7 @@ function mainJob(url) {
     if (!$("a.concept_audio").length) {
       return false;
     }
-    $("a.concept_audio").each(function() {
+    $("a.concept_audio").each(function () {
       const audioUrl = $(this).prev().children().first().attr("src");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -55,8 +55,8 @@ function mainJob(url) {
     if (!$(".icon-play.playAudio").length) {
       return false;
     }
-    $(".icon-play.playAudio").each(function() {
-      const audioUrl = $(this).children().filter(function() {
+    $(".icon-play.playAudio").each(function () {
+      const audioUrl = $(this).children().filter(function () {
         return $(this).attr("itemprop") === "contentURL";
       }).attr("content");
       insertDownloadLink(audioUrl, $(this));
@@ -68,7 +68,7 @@ function mainJob(url) {
     if (!$(".sound.audio_play_button").length) {
       return false;
     }
-    $(".sound.audio_play_button").each(function() {
+    $(".sound.audio_play_button").each(function () {
       const audioUrl = $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -79,7 +79,7 @@ function mainJob(url) {
     if (!$("#dict-body .voice-js.voice-button").length) {
       return false;
     }
-    $("#dict-body .voice-js.voice-button").each(function() {
+    $("#dict-body .voice-js.voice-button").each(function () {
       // 排除掉中文發音
       if (!$(this).attr("data-rel").match(/langid=de*/)) {
         // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
@@ -95,7 +95,7 @@ function mainJob(url) {
     if (!$("#dict-body .voice-js.voice-button").length) {
       return false;
     }
-    $("#dict-body .voice-js.voice-button").each(function() {
+    $("#dict-body .voice-js.voice-button").each(function () {
       // 排除掉中文發音
       if (!$(this).attr("data-rel").match(/langid=fr*/)) {
         // If we "return false" here, we will accidentally break out of each() loops early. see http://api.jquery.com/each/
@@ -111,7 +111,7 @@ function mainJob(url) {
     if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
-    $(".ill-onebuttonplayer").each(function() {
+    $(".ill-onebuttonplayer").each(function () {
       const audioUrl = $(this).attr("data-url");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -122,7 +122,7 @@ function mainJob(url) {
     if (!$(".ill-onebuttonplayer").length) {
       return false;
     }
-    $(".ill-onebuttonplayer").each(function() {
+    $(".ill-onebuttonplayer").each(function () {
       const audioUrl = $(this).attr("data-url");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -133,7 +133,7 @@ function mainJob(url) {
     if (!$(".fa.fa-volume-up.play_pron").length) {
       return false;
     }
-    $(".fa.fa-volume-up.play_pron").each(function() {
+    $(".fa.fa-volume-up.play_pron").each(function () {
       const dir = $(this).attr("data-dir");
       const file = $(this).attr("data-file");
       const audioUrl = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
@@ -146,7 +146,7 @@ function mainJob(url) {
     if (!$(".audioButton").length) {
       return false;
     }
-    $(".audioButton").each(function() {
+    $(".audioButton").each(function () {
       const audioUrl = "https://tw.voicetube.com" + $(this).attr("href");
       insertDownloadLink(audioUrl, $(this).parent().parent());
     });
@@ -157,7 +157,7 @@ function mainJob(url) {
     if (!$(".play-pron").length) {
       return false;
     }
-    $(".play-pron").each(function() {
+    $(".play-pron").each(function () {
       const dir = $(this).attr("data-dir");
       const file = $(this).attr("data-file");
       const audioUrl = "http://media.merriam-webster.com/audio/prons/en/us/mp3/" + dir + "/" + file + ".mp3";
@@ -179,14 +179,14 @@ function mainJob(url) {
     const dir = vocab.charAt(0).toUpperCase();
     // 真人發音(男)
     if ($("#real_pron_m").length) {
-      $("#real_pron_m").each(function() {
+      $("#real_pron_m").each(function () {
         const audioUrl = "http://yun.dreye.com/dict_new/media/" + dir + "/" + vocab + ".mp3";
         insertDownloadLink(audioUrl, $(this));
       });
     }
     // 真人發音(女)
     if ($("#real_pron_f").length) {
-      $("#real_pron_f").each(function() {
+      $("#real_pron_f").each(function () {
         const audioUrl = "http://yun.dreye.com/dict_new/female_media/" + dir + "/" + vocab + ".mp3";
         insertDownloadLink(audioUrl, $(this));
       });
@@ -198,7 +198,7 @@ function mainJob(url) {
     if (!$("a.audio").length) {
       return false;
     }
-    $("a.audio").each(function() {
+    $("a.audio").each(function () {
       const audioUrl = "https://audio.vocab.com/1.0/us/" + $(this).attr("data-audio") + ".mp3";
       insertDownloadLink(audioUrl, $(this));
     });
@@ -208,7 +208,7 @@ function mainJob(url) {
   else if (url.match(/http[s]?:\/\/*www.thefreedictionary.com\/*/)) {
     // 美國
     if ($(".i.snd-icon-US").length > 0) {
-      $(".i.snd-icon-US").each(function() {
+      $(".i.snd-icon-US").each(function () {
         const tmp = $(this).attr("onclick");
         const audioUrl = tmp.substring(10, tmp.length - 2);
         insertDownloadLink(audioUrl, $(this));
@@ -216,7 +216,7 @@ function mainJob(url) {
     }
     // 英國
     if ($(".i.snd-icon-UK").length > 0) {
-      $(".i.snd-icon-UK").each(function() {
+      $(".i.snd-icon-UK").each(function () {
         const tmp = $(this).attr("onclick");
         const audioUrl = tmp.substring(10, tmp.length - 2);
         insertDownloadLink(audioUrl, $(this));
@@ -224,7 +224,7 @@ function mainJob(url) {
     }
     // plain
     if ($(".i.snd-icon-plain").length > 0) {
-      $(".i.snd-icon-plain").each(function() {
+      $(".i.snd-icon-plain").each(function () {
         const tmp = $(this).attr("onclick");
         const audioUrl = tmp.substring(10, tmp.length - 2);
         insertDownloadLink(audioUrl, $(this));
@@ -240,7 +240,7 @@ function mainJob(url) {
       return false;
     }
     // 從 DOM 裡面找到設定 Quizlet.SetPage 的 <script>
-    const isTarget = function(aikotoba) {
+    const isTarget = function (aikotoba) {
       if (aikotoba === 'Quizlet.SetPage') {
         return true;
       }
@@ -258,7 +258,7 @@ function mainJob(url) {
     const posStart = targetScript.indexOf('[{');
     const posEnd = targetScript.indexOf('}])');
     const myJson = JSON.parse(targetScript.substring(posStart, posEnd + 2));
-    $("a.play-audio").each(function() {
+    $("a.play-audio").each(function () {
       // 往上找到所屬之 data-id
       const dataId = $(this).closest('.has-audio')[0].getAttribute('data-id');
       for (let i = 0; i < myJson.length; i++) {
@@ -275,7 +275,7 @@ function mainJob(url) {
     if (!$("span.PRONS").length) {
       return false;
     }
-    $("span.PRONS").each(function() {
+    $("span.PRONS").each(function () {
       const audioUrl = $(this).children('.audio_play_button').attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -286,7 +286,7 @@ function mainJob(url) {
     if (!$(".voice_track").length) {
       return false;
     }
-    $(".voice_track").each(function() {
+    $(".voice_track").each(function () {
       const audioUrl = $(this).attr("src");
       insertDownloadLink(audioUrl, $(this));
     });
@@ -297,7 +297,7 @@ function mainJob(url) {
     if (!$("#sound > param[name='FlashVars']").length) {
       return false;
     }
-    $("#sound > param[name='FlashVars']").each(function() {
+    $("#sound > param[name='FlashVars']").each(function () {
       const value = $(this).attr("value");
       const audioUrl = value.substring(5, value.length - 16);
       insertDownloadLink(audioUrl, $(this));
@@ -308,7 +308,7 @@ function mainJob(url) {
   else if (url.match(/http[s]?:\/\/*www.yueyv.cn\/*/)) {
     // 單字發音
     if ($(".dictvoice").length) {
-      $(".dictvoice").each(function() {
+      $(".dictvoice").each(function () {
         const target = $(this).attr("data-rel");
         const audioUrl = 'http://www.yueyv.cn/voice/' + target + '.mp3';
         insertDownloadLink(audioUrl, $(this));
@@ -316,7 +316,7 @@ function mainJob(url) {
     }
     // 例句發音
     if ($("audio[id^=mediacontrol]").length) {
-      $("audio[id^=mediacontrol]").each(function() {
+      $("audio[id^=mediacontrol]").each(function () {
         const target = $(this).attr("src");
         const audioUrl = 'http://www.yueyv.cn/' + target;
         insertDownloadLink(audioUrl, $(this));
@@ -329,8 +329,8 @@ function mainJob(url) {
     if (!$(".audio-wrapper").length) {
       return false;
     }
-    $(".audio-wrapper>audio").each(function() {
-      const audioUrl = $(this).children().filter(function() {
+    $(".audio-wrapper>audio").each(function () {
+      const audioUrl = $(this).children().filter(function () {
         return $(this).attr('type') === 'audio/mpeg';
       }).attr("src");
       insertDownloadLink(audioUrl, $(this).parent());
@@ -344,7 +344,7 @@ function mainJob(url) {
     if (!$(".katsuyo_proc_female_button").length) {
       return false;
     }
-    $(".katsuyo_proc_female_button").each(function() {
+    $(".katsuyo_proc_female_button").each(function () {
       const audioUrl = ojadGetURL(preUrl + "female/", $(this).attr("id") + ".mp3");
       if (audioUrl !== null) {
         insertDownloadLink(audioUrl, $(this).parent().prev());
@@ -354,7 +354,7 @@ function mainJob(url) {
     if (!$(".katsuyo_proc_male_button").length) {
       return false;
     }
-    $(".katsuyo_proc_male_button").each(function() {
+    $(".katsuyo_proc_male_button").each(function () {
       const audioUrl = ojadGetURL(preUrl + "male/", $(this).attr("id") + ".mp3");
       if (audioUrl !== null) {
         insertDownloadLink(audioUrl, $(this).parent().prev());
@@ -367,7 +367,7 @@ function mainJob(url) {
     if (!$(".dictvoice").length) {
       return false;
     }
-    $(".dictvoice").each(function() {
+    $(".dictvoice").each(function () {
       const audioUrl = "http://dict.youdao.com/dictvoice?audio=" + $(this).attr("data-rel");
       insertDownloadLink(audioUrl, $(this).parent());
     });
@@ -378,7 +378,7 @@ function mainJob(url) {
     if (!$(".speaker").length) {
       return false;
     }
-    $(".speaker").each(function() {
+    $(".speaker").each(function () {
       const audioUrl = $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -389,7 +389,7 @@ function mainJob(url) {
     if (!$(".audio").length) {
       return false;
     }
-    $(".audio").each(function() {
+    $(".audio").each(function () {
       const audioUrl = "http://www.linguee.com/mp3/" + $(this).attr("id");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -401,7 +401,7 @@ function mainJob(url) {
     if (!$("img[src*='/pics/s1.png']").length) {
       return false;
     }
-    $("img[src*='/pics/s1.png']").parent().each(function() {
+    $("img[src*='/pics/s1.png']").parent().each(function () {
       const tmp = $(this).attr("href");
       const audioUrl = "http://dict.tu-chemnitz.de/speak-" + tuchemnitz(tmp.substring(17, tmp.length - 2)) + ".mp3";
       insertDownloadLink(audioUrl, $(this), false);
@@ -413,11 +413,11 @@ function mainJob(url) {
     if (!$("img[src*='img/sound.gif']").length) {
       return false;
     }
-    $("img[src*='/img/sound.gif']").each(function() {
-      const tmp = $(this).parent().attr("onclick");  // PlaySound('ป่า', 1370321)
+    $("img[src*='/img/sound.gif']").each(function () {
+      const tmp = $(this).parent().attr("onclick"); // PlaySound('ป่า', 1370321)
       const regexResult = /(.*), (.*)\)/g.exec(tmp);
-      const id = regexResult[2];  // 1370321)
-      const audioUrl = "http://www.thai2english.com/sounds/" + id + ".mp3" ;
+      const id = regexResult[2]; // 1370321)
+      const audioUrl = "http://www.thai2english.com/sounds/" + id + ".mp3";
       // console.log(audioUrl);
       insertDownloadLink(audioUrl, $(this).parent(), false);
     });
@@ -428,10 +428,10 @@ function mainJob(url) {
     if (!$("img[src*='img/speaker_sm.gif']").length) {
       return false;
     }
-    $("img[src*='/img/speaker_sm.gif']").each(function() {
-      const tmp = $(this).parent().attr("onclick");  // PlayAudioFile('/audio/P202463.wma')
+    $("img[src*='/img/speaker_sm.gif']").each(function () {
+      const tmp = $(this).parent().attr("onclick"); // PlayAudioFile('/audio/P202463.wma')
       const regexResult = /PlayAudioFile\('(.*)'\)/g.exec(tmp);
-      const id = regexResult[1];  //
+      const id = regexResult[1]; //
       const audioUrl = "http://www.thai-language.com" + id;
       // console.log(audioUrl);
       insertDownloadLink(audioUrl, $(this).parent(), false);
@@ -443,7 +443,7 @@ function mainJob(url) {
     if (!$(".sound").length) {
       return false;
     }
-    $(".sound").each(function() {
+    $(".sound").each(function () {
       const audioUrl = "http://audio.dict.cn/" + $(this).attr("naudio");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -454,7 +454,7 @@ function mainJob(url) {
     if (!$(".audio_play_button").length) {
       return false;
     }
-    $(".audio_play_button").each(function() {
+    $(".audio_play_button").each(function () {
       const audioUrl = "https://www.collinsdictionary.com" + $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -465,7 +465,7 @@ function mainJob(url) {
     if (!$("a.play").length) {
       return false;
     }
-    $("a.play").each(function() {
+    $("a.play").each(function () {
       const audioUrl = $(this).attr("playlist");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -476,7 +476,7 @@ function mainJob(url) {
     if (!$("i.sound").length) {
       return false;
     }
-    $("i.sound").each(function() {
+    $("i.sound").each(function () {
       const audioUrl = "http://www.zdic.net/p/mp3/" + $(this).attr("audio") + ".mp3";
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -487,7 +487,7 @@ function mainJob(url) {
     if (!$("a.voice-button").length) {
       return false;
     }
-    $("a.voice-button").each(function() {
+    $("a.voice-button").each(function () {
       const audioUrl = "http://api.frdic.com/api/v2/speech/speakweb?" + $(this).attr("data-rel");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -498,7 +498,7 @@ function mainJob(url) {
     if (!$("a.play").length) {
       return false;
     }
-    $("a.play").each(function() {
+    $("a.play").each(function () {
       const audioUrl = "http://e-dictionary.apc.gov.tw" + $(this).attr("rel");
       insertDownloadLink(audioUrl, $(this), false);
     });
@@ -510,24 +510,41 @@ function mainJob(url) {
     if (!$("a.audio-link > audio > source").length) {
       return false;
     }
-    $("a.audio-link > audio > source").each(function() {
+    $("a.audio-link > audio > source").each(function () {
       const audioUrl = $(this).attr("src");
       insertDownloadLink(audioUrl, $(this).parent().parent());
     });
   }
 
-  // TODO: too lazy to tidy up duplicated codes
+  // http://www.wordreference.com/
+  else if (url.match(/http[s]?:\/\/*www.wordreference.com\/*/)) {
+    if (!$("#listen_widget").length) {
+      return false;
+    }
+    $("#listen_widget").each(function () {
+      const prefix = `http://www.wordreference.com`
+      insertDownloadLink(prefix + $("#aud7 > source").attr("src"), $(this), true, `(JAMAICAN)<br/>`);
+      insertDownloadLink(prefix + $("#aud6 > source").attr("src"), $(this), true, `(US-SOUNTHERN)<br/>`);
+      insertDownloadLink(prefix + $("#aud5 > source").attr("src"), $(this), true, `(SCOTTISH)<br/>`);
+      insertDownloadLink(prefix + $("#aud4 > source").attr("src"), $(this), true, `(IRISH)<br/>`);
+      insertDownloadLink(prefix + $("#aud3 > source").attr("src"), $(this), true, `(UK-YORKSHIRE)<br/>`);
+      insertDownloadLink(prefix + $("#aud2 > source").attr("src"), $(this), true, `(UK-RP)<br/>`);
+      insertDownloadLink(prefix + $("#aud1 > source").attr("src"), $(this), true, `(UK)<br/>`);
+      insertDownloadLink(prefix + $("#aud0 > source").attr("src"), $(this), true, `(US)<br/>`);
+    });
+  }
 
+  // TODO: too lazy to tidy up duplicated codes
   else {
     // console.log("no match");
     return false;
   }
 }
 
-function insertDownloadLink(audioUrl, insertAfterDOM, isInsertLogo = true) {
+function insertDownloadLink(audioUrl, insertAfterDOM, isInsertLogo = true, text = "") {
   // console.log("audioUrl = " + audioUrl);
   const imageUrl = chrome.extension.getURL('icons/icon_24.png');
-  let HTML = "<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio")
+  let HTML = "<span style='font-size:14px'><a target='_blank' href='" + audioUrl + "'>" + chrome.i18n.getMessage("textDownloadAudio") + text
   if (isInsertLogo) {
     HTML += "<img src='" + imageUrl + "' alt='Download Audio' height='16' width='16'>"
   }
@@ -573,9 +590,11 @@ function ojadGetURL(preUrl, fileName) {
     https://developer.chrome.com/extensions/messaging
 */
 chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
+  function (request, sender, sendResponse) {
     if (request.greeting === "onClickedPageActionButton") {
       mainJob(document.URL);
-      sendResponse({farewell: "goodbye"});
+      sendResponse({
+        farewell: "goodbye"
+      });
     }
   });
