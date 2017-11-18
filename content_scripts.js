@@ -29,7 +29,7 @@ function mainJob(url) {
   }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
-  else if (url.match(/http:\/\/*www.oxfordlearnersdictionaries.com\/*/)) {
+  else if (url.match(/http[s]?:\/\/*www.oxfordlearnersdictionaries.com\/*/)) {
     if (!$(".audio_play_button").length) {
       return false;
     }
@@ -40,7 +40,7 @@ function mainJob(url) {
   }
 
   // http://jisho.org/
-  else if (url.match(/http:\/\/*jisho.org\/*/)) {
+  else if (url.match(/http[s]?:\/\/*jisho.org\/*/)) {
     if (!$("a.concept_audio").length) {
       return false;
     }
@@ -501,6 +501,18 @@ function mainJob(url) {
     $("a.play").each(function() {
       const audioUrl = "http://e-dictionary.apc.gov.tw" + $(this).attr("rel");
       insertDownloadLink(audioUrl, $(this), false);
+    });
+  }
+
+
+  // https://learngerman.dw.com/en/
+  else if (url.match(/http[s]?:\/\/*learngerman.dw.com\/en\/*/)) {
+    if (!$("a.audio-link > audio > source").length) {
+      return false;
+    }
+    $("a.audio-link > audio > source").each(function() {
+      const audioUrl = $(this).attr("src");
+      insertDownloadLink(audioUrl, $(this).parent().parent());
     });
   }
 
