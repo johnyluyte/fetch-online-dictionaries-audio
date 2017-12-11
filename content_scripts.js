@@ -547,6 +547,17 @@ function mainJob(url) {
     });
   }
 
+  // https://www.leo.org/
+  else if (url.match(/http[s]?:\/\/*dict.leo.org\/*/)) {
+    if (!$(".icon_play-circle-outline").length) {
+      return false;
+    }
+    $(".icon_play-circle-outline").each(function () {
+      const audioUrl = `https://dict.leo.org/media/audio/` + $(this).attr("data-dz-rel-audio") + `.ogg`;
+      insertDownloadLink(audioUrl, $(this).parent().next().children());
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
   else {
     // console.log("no match");

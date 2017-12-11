@@ -48,6 +48,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English/German) learngerman.dw.com [https://learngerman.dw.com/](https://learngerman.dw.com/)
 - (English) WordReference [http://www.wordreference.com/](http://www.wordreference.com/)
 - (台語) i taigi [https://itaigi.tw](https://itaigi.tw)
+- (German/Deutsch) [https://dict.leo.org](https://dict.leo.org)
 
 ## Add a New Entry
 
