@@ -19,13 +19,15 @@ function mainJob(url) {
       https://developer.chrome.com/extensions/i18n
   */
 
-  // https://tw.dictionary.yahoo.com/dictionary?p=wall
+  // https://tw.dictionary.yahoo.com/
   if (url.match(/http[s]?:\/\/*tw.dictionary.yahoo.com\/*/)) {
-    if (!$("audio").length) {
+    if (!$(".button-audio > audio").length) {
       return false;
     }
-    const audioUrl = $("audio").attr("src");
-    insertDownloadLink(audioUrl, '.button-audio');
+    $(".button-audio > audio").each(function () {
+      const audioUrl = $(this).attr("src");
+      insertDownloadLink(audioUrl, $(this).parent());
+    });
   }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
