@@ -20,14 +20,32 @@ function mainJob(url) {
   */
 
   // https://tw.dictionary.yahoo.com/
-  if (url.match(/http[s]?:\/\/*tw.dictionary.yahoo.com\/*/)) {
-    if (!$(".button-audio > audio").length) {
-      return false;
+  if (url.match(/http[s]?:\/\/*tw.dictionary.search.yahoo.com\/*/)) {
+    // audio element might not be loaded yet, we should check it again later.
+    function captureUrlWithRetry(retryCount) {
+      function captureUrl() {
+        if (!$(".dict-sound > audio").length) {
+          return false;
+        }
+        $(".dict-sound > audio").each(function () {
+          const audioUrl = $(this).attr("src");
+          insertDownloadLink(audioUrl, $(this).parent());
+        });
+        return true;
+      }
+
+      if (!captureUrl()) {
+        const retryMaxLimitation = 5;
+        const retryInterval = 300;
+        if (retryCount < retryMaxLimitation) {
+          setTimeout(function() {
+            captureUrlWithRetry(retryCount + 1);
+          }, retryInterval);
+        }
+      }
     }
-    $(".button-audio > audio").each(function () {
-      const audioUrl = $(this).attr("src");
-      insertDownloadLink(audioUrl, $(this).parent());
-    });
+
+    captureUrlWithRetry(0);
   }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
