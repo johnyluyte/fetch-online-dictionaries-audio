@@ -285,11 +285,11 @@ function mainJob(url) {
 
   // http://dict.hjenglish.com/
   else if (url.match(/http[s]?:\/\/*dict.hjenglish.com\/*/)) {
-    if (!$(".voice_track").length) {
+    if (!$(".word-audio").length) {
       return false;
     }
-    $(".voice_track").each(function () {
-      const audioUrl = $(this).attr("src");
+    $(".word-audio").each(function () {
+      const audioUrl = $(this).attr("data-src");
       insertDownloadLink(audioUrl, $(this));
     });
   }
