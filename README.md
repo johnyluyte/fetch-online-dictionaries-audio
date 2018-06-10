@@ -49,6 +49,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) WordReference [http://www.wordreference.com/](http://www.wordreference.com/)
 - (台語) i taigi [https://itaigi.tw](https://itaigi.tw)
 - (German/Deutsch) [https://dict.leo.org](https://dict.leo.org)
+- (All) Forvo [https://forvo.com](https://forvo.com)
 
 ## Add a New Entry
 
