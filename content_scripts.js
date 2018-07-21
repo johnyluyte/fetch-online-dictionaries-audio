@@ -480,13 +480,13 @@ function mainJob(url) {
     });
   }
 
-  // http://dic.naver.com
-  else if (url.match(/http[s]?:\/\/*dic.naver.com\/*/)) {
+  // http://ko.dict.naver.com
+  else if (url.match(/http[s]?:\/\/*ko.dict.naver.com\/*/)) {
     if (!$("a.play").length) {
       return false;
     }
     $("a.play").each(function () {
-      const audioUrl = $(this).attr("playlist");
+      const audioUrl = $(this).attr("purl");
       insertDownloadLink(audioUrl, $(this), false);
     });
   }
