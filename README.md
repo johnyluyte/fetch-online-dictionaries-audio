@@ -60,6 +60,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Remove or comment out debug message.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
+- Add the site's name to `permissions` and `content_scripts` in `manifest.json`.
 - Update version number in `manifest.json`.
 - Add version notes in `updates.html`.
 - Commit & Push to github.
