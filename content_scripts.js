@@ -558,12 +558,16 @@ function mainJob(url) {
   }
 
   // http://dic.naver.com
-  else if (url.match(/http[s]?:\/\/*dic.naver.com\/*/)) {
-    if (!$("a.play").length) {
+  else if (url.match(/http[s]?:\/\/*ko.dict.naver.com\/*/)) {
+    if (!$(".btn_listen").length) {
       return false;
     }
-    $("a.play").each(function() {
-      const audioUrl = $(this).attr("playlist");
+    $(".btn_listen").each(function() {
+      const audioUrl =
+        "https://ko.dict.naver.com/api/nvoice?speaker=mijin&service=dictionary&speech_fmt=mp3&text=" +
+        $(this).attr("encode") +
+        "&vcode=" +
+        $(this).attr("vcode");
       insertDownloadLink(audioUrl, $(this), false);
     });
   }
