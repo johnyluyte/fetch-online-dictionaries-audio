@@ -8,7 +8,6 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 
 **Please note that the copyright of the audio clips belong to their original owners.**
 
-
 ## Supported Online Dictionaries
 
 - (English) 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
@@ -28,7 +27,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - (English) Quizlet [https://quizlet.com/](https://quizlet.com/)
 - (English) Macmillan Dictionary [http://www.macmillandictionary.com/dictionary/](http://www.macmillandictionary.com/dictionary/)
 - (Vietnamese) Vietnamesepod101 [http://www.vietnamesepod101.com/](http://www.vietnamesepod101.com/vietnamese-dictionary/)
-- (J/E) 沪江小d [http://dict.hjenglish.com/](http://dict.hjenglish.com/)
+- (J/E) 沪江小 d [http://dict.hjenglish.com/](http://dict.hjenglish.com/)
 - (Vietnamese) tratu.coviet.vn [http://tratu.coviet.vn/](http://tratu.coviet.vn/)
 - (粵語) 粵語發音詞典 [http://www.yueyv.cn/](http://www.yueyv.cn/)
 - (English) Dictionary.com [http://www.dictionary.com/](http://www.dictionary.com/)
@@ -55,6 +54,9 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 
 - Find a new Online Dictionary which is not yet being supported.
 - Add its audio extraction rules to `content_scripts.js`.
+- Chrome -> Extensions -> Developer -> 載入未封裝功能
+- 更新 `content_scripts.js` 後需要再重新載入未封裝功能，方能使更新作用於重新整理過的頁面上
+
 - Remove or comment out debug message.
 - Add the site's name to `textSupportedSitesLists` in `_locales\en\messages.json`.
 - Add the site's name to `README.md`.
@@ -63,7 +65,6 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 - Commit & Push to github.
 - Update & publish to Google Chrome Store.
 - Add the site's name to `blog page`.
-
 
 ## License
 
