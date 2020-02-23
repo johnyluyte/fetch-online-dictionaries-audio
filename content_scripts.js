@@ -92,11 +92,20 @@ function mainJob(url) {
 
   // http://dictionary.cambridge.org/
   else if (url.match(/http[s]?:\/\/*dictionary.cambridge.org\/*/)) {
-    if (!$(".sound.audio_play_button").length) {
+    if (!$("span.daud").length) {
       return false;
     }
-    $(".sound.audio_play_button").each(function() {
-      const audioUrl = $(this).attr("data-src-mp3");
+    $("span.daud").each(function() {
+      const audioUrl =
+        "https://dictionary.cambridge.org" +
+        $(this)
+          .children()
+          .first()
+          .children()
+          .eq(1)
+          .children()
+          .first()
+          .attr("src");
       insertDownloadLink(audioUrl, $(this));
     });
   }
