@@ -147,11 +147,17 @@ function mainJob(url) {
 
   // http://www.japanesepod101.com/
   else if (url.match(/http[s]?:\/\/*www.japanesepod101.com\/*/)) {
-    if (!$(".ill-onebuttonplayer").length) {
+    if (!$(".di-player").length) {
       return false;
     }
-    $(".ill-onebuttonplayer").each(function() {
-      const audioUrl = $(this).attr("data-url");
+    $(".di-player").each(function() {
+      const url = $(this)
+        .children()
+        .eq(1)
+        .children()
+        .first()
+        .attr("src");
+      const audioUrl = url;
       insertDownloadLink(audioUrl, $(this));
     });
   }
