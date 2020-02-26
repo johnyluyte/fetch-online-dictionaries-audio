@@ -58,6 +58,27 @@ function mainJob(url) {
       insertDownloadLink(audioUrl, $(this));
     });
   }
+  // https://forvo.com/
+  else if (url.match(/http[s]?:\/\/*forvo.com\/*/)) {
+    if (!$("span.play").length) {
+      return false;
+    }
+    $("span.play").each(function () {
+      const playStr = $(this).attr('onclick');
+      // Parse the Play() function body
+      const playParams = playStr.split(';')[0].split(')')[0].split('(')[1].split(',');
+      // Get the sound url by decoding the parameter in base64
+      const paramFirst = atob(playParams[1].substring(1, playParams[1].length-1));
+      const paramFourth = atob(playParams[4].substring(1, playParams[4].length-1));
+      // If the fourth parameter is an empty string, we use first parameter instead
+      if (paramFourth) {
+        audioUrl = `https://audio00.forvo.com/audios/mp3/${paramFourth}`;
+      } else {
+        audioUrl = `https://audio00.forvo.com/mp3/${paramFirst}`;
+      }
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
 
   // http://jisho.org/
   else if (url.match(/http[s]?:\/\/*jisho.org\/*/)) {
