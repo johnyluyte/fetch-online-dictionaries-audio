@@ -12,6 +12,8 @@
   "permissions": [
     "http://tw.dictionary.yahoo.com/*",
     "https://tw.dictionary.yahoo.com/*",
+    "http://tw.dictionary.search.yahoo.com/*",
+    "https://tw.dictionary.search.yahoo.com/*",
     "http://www.oxfordlearnersdictionaries.com/*",
     "https://www.oxfordlearnersdictionaries.com/*",
     "http://jisho.org/*",
@@ -95,6 +97,8 @@
       "matches": [
         "http://tw.dictionary.yahoo.com/*",
         "https://tw.dictionary.yahoo.com/*",
+        "http://tw.dictionary.search.yahoo.com/*",
+        "https://tw.dictionary.search.yahoo.com/*",
         "http://www.oxfordlearnersdictionaries.com/*",
         "https://www.oxfordlearnersdictionaries.com/*",
         "http://jisho.org/*",

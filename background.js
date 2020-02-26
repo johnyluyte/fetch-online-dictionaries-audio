@@ -39,7 +39,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
     details.reason === chrome.runtime.OnInstalledReason.INSTALL ||
     details.reason === chrome.runtime.OnInstalledReason.UPDATE
   ) {
-    console.log("oninstalled or updated");
+    // console.log("oninstalled or updated");
     chrome.tabs.create({ url: "updates.html" });
   }
 });

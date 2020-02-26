@@ -19,7 +19,7 @@ function mainJob(url) {
       https://developer.chrome.com/extensions/i18n
   */
 
-  // https://tw.dictionary.yahoo.com/
+  // https://tw.dictionary.search.yahoo.com
   if (url.match(/http[s]?:\/\/*tw.dictionary.search.yahoo.com\/*/)) {
     // audio element might not be loaded yet, we should check it again later.
     function captureUrlWithRetry(retryCount) {
@@ -63,13 +63,21 @@ function mainJob(url) {
     if (!$("span.play").length) {
       return false;
     }
-    $("span.play").each(function () {
-      const playStr = $(this).attr('onclick');
+    $("span.play").each(function() {
+      const playStr = $(this).attr("onclick");
       // Parse the Play() function body
-      const playParams = playStr.split(';')[0].split(')')[0].split('(')[1].split(',');
+      const playParams = playStr
+        .split(";")[0]
+        .split(")")[0]
+        .split("(")[1]
+        .split(",");
       // Get the sound url by decoding the parameter in base64
-      const paramFirst = atob(playParams[1].substring(1, playParams[1].length-1));
-      const paramFourth = atob(playParams[4].substring(1, playParams[4].length-1));
+      const paramFirst = atob(
+        playParams[1].substring(1, playParams[1].length - 1)
+      );
+      const paramFourth = atob(
+        playParams[4].substring(1, playParams[4].length - 1)
+      );
       // If the fourth parameter is an empty string, we use first parameter instead
       if (paramFourth) {
         audioUrl = `https://audio00.forvo.com/audios/mp3/${paramFourth}`;

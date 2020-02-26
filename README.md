@@ -11,6 +11,7 @@ This Chrome Exthension adds links to download audio for serveral on-line diction
 ## Supported Online Dictionaries
 
 - (English) 台灣雅虎奇摩字典 [http://tw.dictionary.yahoo.com/](http://tw.dictionary.yahoo.com/)
+- (English) 台灣雅虎奇摩字典搜尋 [http://tw.dictionary.search.yahoo.com/](http://tw.dictionary.search.yahoo.com/)
 - (English) Oxford Learners Dictionaries [http://www.oxfordlearnersdictionaries.com/](http://www.oxfordlearnersdictionaries.com/)
 - (Japanese) jisho Japanese-English dictionary [http://jisho.org/](http://jisho.org/)
 - (Traditional Chinese) 萌典 [https://www.moedict.tw/](https://www.moedict.tw/)
