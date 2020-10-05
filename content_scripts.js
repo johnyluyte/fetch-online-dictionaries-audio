@@ -771,6 +771,21 @@ function mainJob(url) {
     });
   }
 
+  // https://ordnet.dk/
+  else if (url.match(/http[s]?:\/\/*ordnet.dk\/*/)) {
+    if (!$("audio").length) {
+      return false;
+    }
+    $("audio").each(function() {
+      const audioUrl =
+        $(this)
+          .children()
+          .children()
+          .attr("href");
+      insertDownloadLink(audioUrl, $(this));
+    });
+  }
+
   // TODO: too lazy to tidy up duplicated codes
   else {
     // console.log("no match");
