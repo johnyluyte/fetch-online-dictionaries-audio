@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "author": "Chien Chun",
   "name": "__MSG_extName__",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "icons": {
@@ -89,7 +89,8 @@
     "http://dict.leo.org/*",
     "https://dict.leo.org/*",
     "http://forvo.com/*",
-    "https://forvo.com/*"
+    "https://forvo.com/*",
+    "https://ordnet.dk/*"
   ],
   "content_scripts": [
     {
@@ -174,7 +175,8 @@
         "http://dict.leo.org/*",
         "https://dict.leo.org/*",
         "http://forvo.com/*",
-        "https://forvo.com/*"
+        "https://forvo.com/*",
+        "https://ordnet.dk/*"
       ]
     }
   ],
