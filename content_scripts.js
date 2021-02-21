@@ -387,10 +387,10 @@ function mainJob(url) {
   else if (
     url.match(/http[s]?:\/\/*www.macmillandictionary.com\/dictionary\/*/)
   ) {
-    if (!$("span.PRONS").length) {
+    if (!$("span.PRON").length) {
       return false;
     }
-    $("span.PRONS").each(function() {
+    $("span.PRON").each(function() {
       const audioUrl = $(this)
         .children(".audio_play_button")
         .attr("data-src-mp3");
