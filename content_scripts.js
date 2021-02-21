@@ -601,8 +601,7 @@ function mainJob(url) {
       return false;
     }
     $(".audio_play_button").each(function() {
-      const audioUrl =
-        "https://www.collinsdictionary.com" + $(this).attr("data-src-mp3");
+      const audioUrl = $(this).attr("data-src-mp3");
       insertDownloadLink(audioUrl, $(this), false);
     });
   }
