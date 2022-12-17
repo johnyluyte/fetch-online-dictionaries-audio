@@ -253,10 +253,10 @@ function mainJob(url) {
 
   // http://www.merriam-webster.com/dictionary/cat
   else if (url.match(/http[s]?:\/\/*www.merriam-webster.com\/*/)) {
-    if (!$(".play-pron").length) {
+    if (!$("[class^='play-pron']").length) {
       return false;
     }
-    $(".play-pron").each(function() {
+    $("[class^='play-pron']").each(function() {
       const dir = $(this).attr("data-dir");
       const file = $(this).attr("data-file");
       const audioUrl =
