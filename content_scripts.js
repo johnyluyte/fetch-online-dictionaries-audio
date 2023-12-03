@@ -29,6 +29,7 @@ function mainJob(url) {
         }
         $(".dict-sound > audio").each(function() {
           const audioUrl = $(this).attr("src");
+          // const audioUrl = 'http://www.google.com/';
           insertDownloadLink(audioUrl, $(this).parent());
         });
         return true;
@@ -46,6 +47,18 @@ function mainJob(url) {
     }
 
     captureUrlWithRetry(0);
+  }
+
+  // https://sutian.moe.edu.tw/zh-hant/su/6912/
+  else if (url.match(/http[s]?:\/\/*sutian.moe.edu.tw\/*/)) {
+    if (!$(".imtong-liua").length) {
+      return false;
+    }
+    $(".imtong-liua").each(function() {
+      // const audioUrl = $(this).attr("data-src-mp3");
+      const audioUrl = 'http://www.google.com';
+      insertDownloadLink(audioUrl, $(this).parent());
+    });
   }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
