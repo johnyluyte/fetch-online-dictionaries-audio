@@ -90,8 +90,8 @@
     "https://dict.leo.org/*",
     "http://forvo.com/*",
     "https://forvo.com/*",
-	"http://sutian.moe.edu.tw/",
-	"https://sutian.moe.edu.tw/"
+	"http://sutian.moe.edu.tw/*",
+	"https://sutian.moe.edu.tw/*"
   ],
   "content_scripts": [
     {
@@ -177,8 +177,8 @@
         "https://dict.leo.org/*",
         "http://forvo.com/*",
         "https://forvo.com/*",
-		"http://sutian.moe.edu.tw/",
-		"https://sutian.moe.edu.tw/"
+		"http://sutian.moe.edu.tw/*",
+		"https://sutian.moe.edu.tw/*"
       ]
     }
   ],

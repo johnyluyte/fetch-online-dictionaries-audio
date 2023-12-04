@@ -50,16 +50,14 @@ function mainJob(url) {
   }
 
   // https://sutian.moe.edu.tw/zh-hant/su/6912/
-  else if (url.match(/http[s]?:\/\/*sutian.moe.edu.tw\/*/)) {
-    if (!$(".imtong-liua").length) {
-      return false;
+    else if (url.includes("sutian.moe.edu.tw")){
+        if(!$(".imtong-liua").length){
+            return false;
+        }
+        $(".imtong-liua").each(function () {
+            insertDownloadLink($(this).attr("data-src"), $(this));
+        })
     }
-    $(".imtong-liua").each(function() {
-      // const audioUrl = $(this).attr("data-src-mp3");
-      const audioUrl = 'http://www.google.com';
-      insertDownloadLink(audioUrl, $(this).parent());
-    });
-  }
 
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
   else if (url.match(/http[s]?:\/\/*www.oxfordlearnersdictionaries.com\/*/)) {
@@ -73,10 +71,14 @@ function mainJob(url) {
   }
   // https://forvo.com/
   else if (url.match(/http[s]?:\/\/*forvo.com\/*/)) {
-    if (!$("span.play").length) {
+	  console.log('in forvo');
+    // if (!$("span.play").length) {
+    if (!$("div.play").length) {
       return false;
     }
-    $("span.play").each(function() {
+    // $("span.play").each(function() {
+    $("div.play").each(function() {
+		console.log('span play');
       const playStr = $(this).attr("onclick");
       // Parse the Play() function body
       const playParams = playStr
