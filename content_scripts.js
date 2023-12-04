@@ -48,6 +48,16 @@ function mainJob(url) {
     captureUrlWithRetry(0);
   }
 
+  // https://sutian.moe.edu.tw/zh-hant/su/6912/
+    else if (url.includes("sutian.moe.edu.tw")){
+        if(!$(".imtong-liua").length){
+            return false;
+        }
+        $(".imtong-liua").each(function () {
+            insertDownloadLink($(this).attr("data-src"), $(this));
+        })
+    }
+
   // http://www.oxfordlearnersdictionaries.com/definition/english/wall_1?q=wall
   else if (url.match(/http[s]?:\/\/*www.oxfordlearnersdictionaries.com\/*/)) {
     if (!$(".audio_play_button").length) {
@@ -60,10 +70,10 @@ function mainJob(url) {
   }
   // https://forvo.com/
   else if (url.match(/http[s]?:\/\/*forvo.com\/*/)) {
-    if (!$("span.play").length) {
+    if (!$("div.play").length) {
       return false;
     }
-    $("span.play").each(function() {
+    $("div.play").each(function() {
       const playStr = $(this).attr("onclick");
       // Parse the Play() function body
       const playParams = playStr
