@@ -29,7 +29,6 @@ function mainJob(url) {
         }
         $(".dict-sound > audio").each(function() {
           const audioUrl = $(this).attr("src");
-          // const audioUrl = 'http://www.google.com/';
           insertDownloadLink(audioUrl, $(this).parent());
         });
         return true;
@@ -71,14 +70,10 @@ function mainJob(url) {
   }
   // https://forvo.com/
   else if (url.match(/http[s]?:\/\/*forvo.com\/*/)) {
-	  console.log('in forvo');
-    // if (!$("span.play").length) {
     if (!$("div.play").length) {
       return false;
     }
-    // $("span.play").each(function() {
     $("div.play").each(function() {
-		console.log('span play');
       const playStr = $(this).attr("onclick");
       // Parse the Play() function body
       const playParams = playStr
